@@ -1,0 +1,208 @@
+{
+  "id": "效果1",
+  "slug": "001_湖景斜切",
+  "name": "湖景斜切滑入",
+  "created": "2026-10-30",
+  "source_reference": "示范.pptx 第3-4页",
+  "materials": {
+    "min": 1,
+    "max": 1,
+    "aspects": [
+      1.3333
+    ],
+    "aspect_tolerance": 0.06,
+    "orientation": "landscape",
+    "deficit": "none",
+    "checks": {
+      "text_contrast": {
+        "title_color": "000000",
+        "min_mean_luma": 140,
+        "where": "效果1",
+        "fix": "标题改白字、或给底图加一层 30%–50% 的浅色遮罩、或换一张亮调图"
+      }
+    },
+    "requirement": "1 张 4:3 横构图风景照，且不能太暗（黑标题压底图，亮度低于 140 会看不见）",
+    "verified": true
+  },
+  "canvas": {
+    "format": "ppt169",
+    "px": [
+      1280,
+      720
+    ],
+    "cm": [
+      33.87,
+      19.05
+    ],
+    "emu": [
+      12192000,
+      6858000
+    ]
+  },
+  "layers": [
+    {
+      "role": "background",
+      "type": "image",
+      "treatment": {
+        "grayscale": true,
+        "blur_px_at_2364_wide": 3,
+        "fit": "stretch-fill"
+      }
+    },
+    {
+      "role": "bar-top",
+      "type": "rect",
+      "emu": {
+        "x": 0,
+        "y": 0,
+        "cx": 12192000,
+        "cy": 731520
+      },
+      "fill": "000000",
+      "line": "none"
+    },
+    {
+      "role": "bar-bottom",
+      "type": "rect",
+      "emu": {
+        "x": 0,
+        "y": 6127115,
+        "cx": 12192000,
+        "cy": 731520
+      },
+      "fill": "000000",
+      "line": "none"
+    },
+    {
+      "role": "reveal",
+      "type": "image-clip",
+      "clip": {
+        "shape": "parallelogram",
+        "inset_ratio": 0.25
+      },
+      "crop": {
+        "left": 0.05725,
+        "right": 0.0099
+      },
+      "start": {
+        "emu": {
+          "x": 12725400,
+          "y": 1,
+          "cx": 3764280,
+          "cy": 6857365
+        }
+      },
+      "end": {
+        "emu": {
+          "x": 6979920,
+          "y": 1,
+          "cx": 3985168,
+          "cy": 6857365
+        }
+      }
+    },
+    {
+      "role": "title",
+      "type": "text",
+      "font": "华文行楷",
+      "size_pt": 96,
+      "color": "000000",
+      "default_text": "喀纳斯湖",
+      "start": {
+        "emu": {
+          "x": -4968240,
+          "y": 1027906,
+          "cx": 5387340,
+          "cy": 1569660
+        }
+      },
+      "end": {
+        "emu": {
+          "x": 1371600,
+          "y": 1463040,
+          "cx": 5387340,
+          "cy": 1569660
+        }
+      },
+      "bodyPr": {
+        "wrap": "square",
+        "insets": "default"
+      }
+    }
+  ],
+  "shadow": {
+    "on": "reveal",
+    "type": "outerShdw",
+    "prstClr": "black",
+    "alpha": 40000,
+    "blurRad": 50800,
+    "dist": 38100,
+    "dir": 2700000,
+    "algn": "tl",
+    "rotWithShape": 0
+  },
+  "transition": {
+    "slide": 2,
+    "effect": "morph",
+    "morph_by": "byObject",
+    "spd": "slow",
+    "duration_s": 1,
+    "advance": "on-click"
+  },
+  "roles_layout_px": {
+    "bar_height": 76.72,
+    "bar_bottom_y": 643.21,
+    "reveal_end": {
+      "x": 732.75,
+      "w": 418.28
+    },
+    "reveal_start": {
+      "x": 1335.88,
+      "w": 395.3
+    },
+    "title_end": {
+      "x": 151,
+      "y": 300
+    },
+    "title_start": {
+      "x": -531,
+      "y": 254.65
+    }
+  },
+  "title_variants": {
+    "short": {
+      "when": "标题不超过 2 个字：水平居中于左侧可视区，字号放大到 144pt",
+      "size_pt": 144,
+      "align": "ctr",
+      "anchor": "ctr",
+      "box": {
+        "x": 85725,
+        "y": 866775,
+        "cx": 6667500,
+        "cy": 2857500
+      },
+      "box_px": {
+        "x": 9,
+        "y": 91,
+        "w": 700,
+        "h": 300
+      },
+      "optical_center_px": [
+        366,
+        235
+      ],
+      "note": "box_px 以 PowerPoint 实际渲染为准（1920x1080 导出，两页相减取墨迹 bbox）：字形中心落在 (366,235)px，与四字版参考件的实测墨迹中心一致。2026-11-07 由 25/81 校正为 9/91。"
+    }
+  },
+  "fonts": {
+    "used_in_reference": [
+      "霞鹜文楷"
+    ],
+    "recommended_free": [
+      "霞鹜文楷"
+    ],
+    "note": "参考件字体名已统一为开源字体；本机未装时会回退，版式仍成立。"
+  },
+  "preview": "docs/preview/效果1_湖景斜切滑入.png",
+  "summary": "左侧灰底黑字标题自左滑入，右侧斜切彩色带自右滑入；2 页，平滑 1 秒。"
+}

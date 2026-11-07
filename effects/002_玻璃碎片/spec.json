@@ -1,0 +1,323 @@
+{
+  "id": "效果2",
+  "slug": "002_玻璃碎片",
+  "name": "玻璃碎片散开",
+  "created": "2026-10-30",
+  "source_reference": "示范.pptx 第5-7页",
+  "materials": {
+    "variants": {
+      "short": {
+        "min": 1,
+        "max": 1,
+        "orientation": "any",
+        "deficit": "none",
+        "requirement": "短版 1 张照片做整页背景，比例不限（拉伸铺满）"
+      },
+      "long": {
+        "min": 1,
+        "max": 5,
+        "orientation": "any",
+        "deficit": "repeat",
+        "requirement": "长版 1–5 张：按页段当背景；四栏拼贴页每栏各一张"
+      }
+    },
+    "verified": false,
+    "note": "长版只给背景时，四栏拼贴页（输出 12–19 页）看起来不会变；要那几页变就得按栏位给图"
+  },
+  "canvas": {
+    "format": "ppt169",
+    "px": [
+      1280,
+      720
+    ],
+    "emu": [
+      12192000,
+      6858000
+    ]
+  },
+  "background": {
+    "type": "slide-bg-blipfill",
+    "image": "bg.jpg",
+    "stretch": "fill",
+    "note": "必须是幻灯片背景填充，不能用图片形状；图文框靠 useBgFill 透出背景"
+  },
+  "overlay": {
+    "type": "rect",
+    "fill": "000000",
+    "alpha": 30000,
+    "all_pages": true
+  },
+  "frames": {
+    "count": 4,
+    "prst": "frame",
+    "adj1": 24686,
+    "fill": "useBgFill",
+    "line": "none",
+    "shadow": {
+      "blurRad": 127000,
+      "sx": 102000,
+      "sy": 102000,
+      "algn": "ctr",
+      "rotWithShape": 0,
+      "color": "black",
+      "alpha": 60000
+    },
+    "names": [
+      "图文框 8",
+      "图文框 16",
+      "图文框 18",
+      "图文框 20"
+    ],
+    "pages": {
+      "1": [
+        [
+          4812354,
+          2781185,
+          1823302,
+          1829035,
+          2632978,
+          24686
+        ],
+        [
+          4812354,
+          2781184,
+          1823302,
+          1829035,
+          2632978,
+          24686
+        ],
+        [
+          4812354,
+          2705775,
+          1823302,
+          1829035,
+          2632978,
+          24686
+        ],
+        [
+          4812354,
+          2705776,
+          1823302,
+          1829035,
+          2632978,
+          24686
+        ]
+      ],
+      "2": [
+        [
+          4831386,
+          2724080,
+          1823302,
+          1829035,
+          8014089,
+          24686
+        ],
+        [
+          2412491,
+          381625,
+          6623027,
+          6628153,
+          -2760000,
+          24686
+        ],
+        [
+          3357172,
+          1268258,
+          4825642,
+          4873936,
+          8071297,
+          24686
+        ],
+        [
+          3868818,
+          1796020,
+          3748443,
+          3685157,
+          18773005,
+          25655
+        ]
+      ],
+      "3": [
+        [
+          628405,
+          2781185,
+          1823302,
+          1829035,
+          2632978,
+          24686
+        ],
+        [
+          3365886,
+          2781184,
+          1823302,
+          1829035,
+          2632978,
+          24686
+        ],
+        [
+          6103366,
+          2705775,
+          1823302,
+          1829035,
+          2632978,
+          24686
+        ],
+        [
+          8996304,
+          2705776,
+          1823302,
+          1829035,
+          2632978,
+          24686
+        ]
+      ]
+    },
+    "row_format": "[off_x, off_y, ext_cx, ext_cy, rot(1/60000 deg), adj1]"
+  },
+  "text": {
+    "font": "华文行楷",
+    "color": "FFFFFF",
+    "line_spacing": "90%",
+    "line_break": "a:br",
+    "page2": {
+      "content": [
+        "开学",
+        "快乐"
+      ],
+      "size_pt": 96,
+      "box_emu": [
+        512193,
+        3042444,
+        10515600,
+        1325563
+      ],
+      "align": "ctr",
+      "anchor": "ctr"
+    },
+    "page3": {
+      "title": {
+        "content": "目录",
+        "size_pt": 72,
+        "box_emu": [
+          838200,
+          363600,
+          10515600,
+          1324800
+        ]
+      },
+      "numbers": [
+        {
+          "content": "01",
+          "size_pt": 60,
+          "box_emu": [
+            984050,
+            3287142,
+            956557,
+            666300
+          ]
+        },
+        {
+          "content": "02",
+          "size_pt": 60,
+          "box_emu": [
+            3772800,
+            3286800,
+            956557,
+            666300
+          ]
+        },
+        {
+          "content": "03",
+          "size_pt": 60,
+          "box_emu": [
+            6451200,
+            3276000,
+            956557,
+            666300
+          ]
+        },
+        {
+          "content": "04",
+          "size_pt": 60,
+          "box_emu": [
+            9291600,
+            3193200,
+            956557,
+            666300
+          ]
+        }
+      ],
+      "numbers_y_offset": 124000
+    }
+  },
+  "transition": {
+    "pages": [
+      2,
+      3
+    ],
+    "effect": "morph",
+    "morph_by": "byObject",
+    "spd": "slow",
+    "p14_dur": 2000,
+    "advance": "on-click"
+  },
+  "variants": {
+    "short": {
+      "pages": 3,
+      "source": "示范.pptx 第5-7页",
+      "method": "ppt-master 生成 + patch_effect2.py",
+      "note": "单图开场，玻璃三页"
+    },
+    "long": {
+      "pages": 19,
+      "source": "示范.pptx 第5-23页（用户最新稿）",
+      "method": "template-transplant",
+      "script": "tools/build_effect2_ext.py",
+      "segments": [
+        {
+          "pages": "5-6",
+          "role": "玻璃开场"
+        },
+        {
+          "pages": "7-8",
+          "role": "目录 01-04"
+        },
+        {
+          "pages": "9-15",
+          "role": "分段 01-04"
+        },
+        {
+          "pages": "16-23",
+          "role": "四栏拼贴"
+        }
+      ],
+      "slot_matching": "color-signature nearest neighbor; distance > 500 requires manual check",
+      "note": "每次调用前先确认用户桌面稿的页数与哈希，否则会用到旧副本",
+      "background_ranges": {
+        "rule": "用户按输出页段指定背景图；每页单独生成 ppt/media/bgpNN.jpg 并新增关系，避免共用媒体串味",
+        "detect": "先找 12192000x6858000（±200000）且带 a:blip 的形状；找不到再用 p:bg//a:blip",
+        "script": "tools/build_effect2_ride.py"
+      },
+      "collage": {
+        "pages": "输出 12-19（原稿 16-23）",
+        "columns": 4,
+        "rule": "四栏内容图按 x 从左到右各放一张；栏下标签随内容更换，用户选删则整块删除",
+        "size_emu": [
+          9144000,
+          6858000
+        ]
+      }
+    }
+  },
+  "fonts": {
+    "used_in_reference": [
+      "霞鹜文楷"
+    ],
+    "recommended_free": [
+      "霞鹜文楷"
+    ],
+    "note": "参考件字体名已统一为开源字体；本机未装时会回退，版式仍成立。"
+  },
+  "preview": "docs/preview/效果2_玻璃碎片散开.png",
+  "summary": "四块「玻璃」从中心叠起、散开、排成一行；短版 3 页 / 长版 19 页，平滑 2 秒。"
+}

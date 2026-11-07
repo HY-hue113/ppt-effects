@@ -1,0 +1,103 @@
+{
+  "id": "效果8",
+  "slug": "008_纯矢量动画",
+  "name": "纯矢量动画",
+  "created": "2026-11-04",
+  "source_reference": "大学万能职业生涯.pptx（模板）+ 职业规划-大学版.pptx（成品）",
+  "materials": {
+    "min": 0,
+    "max": 0,
+    "orientation": "any",
+    "deficit": "none",
+    "requirement": "不依赖照片（纯矢量），只换文字",
+    "verified": true
+  },
+  "method": "template-transplant",
+  "pages": 33,
+  "canvas": {
+    "format": "ppt169",
+    "cm": [
+      33.9,
+      19.1
+    ]
+  },
+  "visual": {
+    "type": "pure-vector",
+    "media_count": 3,
+    "file_size_kb": 539,
+    "palette": {
+      "deep_navy": "#2F3E52",
+      "mid_blue": "#4E5D78",
+      "light_blue": "#AEBCCB",
+      "pale": "#EEF2F7",
+      "gold": "#D9B45E",
+      "grey": "#9AA5B1"
+    },
+    "chapter_page": "满版深靛 + 浅蓝大字 + 英文副标（2026-11-07 换色，区别于原模板的绿系）",
+    "layout": "左侧竖排章节名 + 右侧内容；圆形装饰"
+  },
+  "structure": [
+    {
+      "pages": "1-3",
+      "role": "封面 / 目录（转盘四章）/ 前言"
+    },
+    {
+      "pages": "4-9",
+      "role": "第一章 自我认识（自我介绍 / MBTI / 霍兰德 / 评价）"
+    },
+    {
+      "pages": "10-18",
+      "role": "第二章 环境分析（1/2/3/4 大数字页）"
+    },
+    {
+      "pages": "19-30",
+      "role": "第三章 评估与调整（四类评估）"
+    },
+    {
+      "pages": "31-32",
+      "role": "第四章 行动计划（时间轴）"
+    },
+    {
+      "pages": "33",
+      "role": "感谢观看"
+    }
+  ],
+  "toc": [
+    "自我认识",
+    "环境分析",
+    "评估与调整",
+    "行动计划"
+  ],
+  "animation": {
+    "per_page": "1–3 个淡入/浮入",
+    "transition": "morph（30/33 页）"
+  },
+  "editable_text_slots": {
+    "3": "前言三段",
+    "22": "目标评估",
+    "24": "策略评估",
+    "26": "路径评估",
+    "28": "其他因素评估",
+    "29": "结论三行"
+  },
+  "constraints": {
+    "never_rewrite_cover": true,
+    "toc_and_chapters_must_match": true,
+    "white_text_on_green_card": true,
+    "fix_placeholders_before_delivery": true
+  },
+  "script": "tools/remake_uni.py",
+  "fonts": {
+    "used_in_reference": [
+      "思源黑体",
+      "HarmonyOS Sans SC"
+    ],
+    "recommended_free": [
+      "思源黑体",
+      "HarmonyOS Sans SC"
+    ],
+    "note": "参考件字体名已统一为开源字体；本机未装时会回退，版式仍成立。"
+  },
+  "preview": "docs/preview/效果8_纯矢量动画.png",
+  "summary": "33 页纯矢量版式（封面/转盘目录/四章/大数字/评估/时间轴），只换文字。"
+}

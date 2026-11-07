@@ -1,0 +1,82 @@
+{
+  "id": "效果9",
+  "slug": "009_金边弧线",
+  "name": "金边弧线",
+  "created": "2026-11-04",
+  "source_reference": "镶金边职业生涯(12).pptx",
+  "materials": {
+    "min": 16,
+    "max": 16,
+    "aspects": [
+      1.7778,
+      1.7775,
+      0.8524
+    ],
+    "aspect_tolerance": 0.08,
+    "orientation": "mixed",
+    "deficit": "repeat",
+    "allow_repeat": true,
+    "crop_allowed": true,
+    "requirement": "16 个槽位；少于 16 张可以重复使用同一张（按同图铺槽，不混旧图）",
+    "verified": true
+  },
+  "method": "template-transplant",
+  "pages": 19,
+  "canvas": {
+    "format": "ppt169",
+    "cm": [
+      33.9,
+      19.1
+    ]
+  },
+  "transition": {
+    "type": "慢速切换",
+    "xml": "<p:transition spd=\"slow\" p14:dur=\"2000\">",
+    "auto_advance_ms": 2000,
+    "note": "每页 advTm=2000，自动换片 2 秒，这是节奏核心"
+  },
+  "animation": {
+    "pages_with_animation": [
+      2
+    ],
+    "count": 8,
+    "note": "只有目录页有淡入/浮入，其余靠切换推进"
+  },
+  "media": {
+    "count": 16,
+    "aspects": [
+      "1920x1080",
+      "1422x800",
+      "976x1145"
+    ],
+    "rule": "竖槽只放竖图，横槽放横图；一律居中裁切，不拉伸"
+  },
+  "layout": {
+    "base": "白底 + 深蓝粗弧线",
+    "photo_mask": "圆形 / 半圆 / 胶囊，用形状填充照片",
+    "chapter_number": "超大数字 01–04 + 英文副标",
+    "whitespace": "正文大留白，字少行距大"
+  },
+  "placeholder_policy": {
+    "title_threshold_pt": 28,
+    "title_text": "标题：请输入文本",
+    "body_text": "正文：请输入文本",
+    "color_rule": "页面平均亮度 <130 → 白字；否则黑字",
+    "word_wrap": false
+  },
+  "materials_used": [
+    "湖",
+    "草原",
+    "国门",
+    "盘山",
+    "牦牛"
+  ],
+  "constraints": {
+    "keep_auto_advance": true,
+    "vertical_slots_need_vertical_photos": true,
+    "narrow_number_boxes_break_with_long_text": true
+  },
+  "script": "tools/prefix_texts9.py",
+  "preview": "docs/preview/效果9_金边弧线.png",
+  "summary": "白底 + 深蓝弧线 + 圆形取景 + 超大数字；19 页，慢速切换 + 自动换片 2 秒。"
+}

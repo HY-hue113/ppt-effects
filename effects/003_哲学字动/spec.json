@@ -1,0 +1,192 @@
+{
+  "id": "效果3",
+  "slug": "003_哲学字动",
+  "name": "哲学字动（12页 typographic morph）",
+  "created": "2026-10-30",
+  "source_reference": "哲学-什么是真实的存在.pptx 第1-12页",
+  "materials": {
+    "min": 1,
+    "max": 5,
+    "recommended": [
+      4,
+      5
+    ],
+    "recommended_note": "字母行按 1/8–7/8 等距排布，4–5 张才铺得满；1–2 张时只剩一两个字母，页面空、位移也不明显",
+    "aspects": [
+      1.76,
+      1.58,
+      1.32,
+      1.89,
+      1.68
+    ],
+    "aspect_tolerance": 0.08,
+    "orientation": "landscape",
+    "deficit": "fewer-pages",
+    "requirement": "1–5 张照片（推荐 4–5 张），按画幅比例匹配槽位；页数 = 图数×2+2，标签数 = 图数",
+    "verified": true
+  },
+  "method": "template-transplant",
+  "pages": 12,
+  "timeline": [
+    {
+      "page": 1,
+      "type": "text",
+      "dur_ms": 2000,
+      "adv_ms": 500
+    },
+    {
+      "page": 2,
+      "type": "text",
+      "dur_ms": 6000,
+      "adv_ms": 500
+    },
+    {
+      "page": 3,
+      "type": "photo",
+      "dur_ms": null,
+      "adv_ms": 2000
+    },
+    {
+      "page": 4,
+      "type": "text",
+      "dur_ms": null,
+      "adv_ms": 1500
+    },
+    {
+      "page": 5,
+      "type": "photo",
+      "dur_ms": null,
+      "adv_ms": 1500
+    },
+    {
+      "page": 6,
+      "type": "text",
+      "dur_ms": null,
+      "adv_ms": 1500
+    },
+    {
+      "page": 7,
+      "type": "photo",
+      "dur_ms": null,
+      "adv_ms": 1500
+    },
+    {
+      "page": 8,
+      "type": "text",
+      "dur_ms": null,
+      "adv_ms": 2000
+    },
+    {
+      "page": 9,
+      "type": "photo",
+      "dur_ms": null,
+      "adv_ms": 2000
+    },
+    {
+      "page": 10,
+      "type": "text",
+      "dur_ms": 600,
+      "adv_ms": 1000
+    },
+    {
+      "page": 11,
+      "type": "photo",
+      "dur_ms": null,
+      "adv_ms": 1000
+    },
+    {
+      "page": 12,
+      "type": "text",
+      "dur_ms": 1500,
+      "adv_ms": 1000
+    }
+  ],
+  "transition": {
+    "effect": "morph",
+    "morph_by": "byObject",
+    "adv_click": false
+  },
+  "audio": {
+    "page": 1,
+    "file": "ppt/media/media1.mp3",
+    "numSld": 999,
+    "note": "numSld=999 即跨幻灯片播放；不要改成 1"
+  },
+  "photo_slots": [
+    {
+      "page": 3,
+      "media": "ppt/media/image2.jpeg",
+      "aspect": 1.76,
+      "fill": "slide-bg"
+    },
+    {
+      "page": 5,
+      "media": "ppt/media/image3.png",
+      "aspect": 1.58,
+      "fill": "group"
+    },
+    {
+      "page": 7,
+      "media": "ppt/media/image4.jpeg",
+      "aspect": 1.32,
+      "fill": "group"
+    },
+    {
+      "page": 9,
+      "media": "ppt/media/image5.jpeg",
+      "aspect": 1.89,
+      "fill": "slide-bg"
+    },
+    {
+      "page": 11,
+      "media": "ppt/media/image6.jpeg",
+      "aspect": 1.68,
+      "fill": "group"
+    }
+  ],
+  "text": {
+    "source": "沿用参考稿",
+    "letters": [
+      "O",
+      "U",
+      "I",
+      "S",
+      "A"
+    ],
+    "labels": [
+      "Ontology|本体论",
+      "Umwelt|周遭世界",
+      "Substance实体",
+      "Idea|理念",
+      "An sich|自在"
+    ]
+  },
+  "layout_rules": {
+    "page_count": "images * 2 + 2",
+    "label_count": "= images",
+    "unmatched_letter": "delete letter and label together",
+    "text_page_centers": [
+      0.125,
+      0.375,
+      0.625,
+      0.875
+    ],
+    "text_page_first_excluded": true,
+    "label_size": "uniform per page, driven by longest label (len(en) vs len(zh)*1.8)",
+    "label_box": "wrap=none, width = en*0.56em + zh*1.08em, keep center",
+    "label_line_spacing": 0.8
+  },
+  "fonts": {
+    "used_in_reference": [
+      "EB Garamond",
+      "思源宋体"
+    ],
+    "recommended_free": [
+      "EB Garamond",
+      "思源宋体"
+    ],
+    "note": "参考件字体名已统一为开源字体；本机未装时会回退，版式仍成立。"
+  },
+  "preview": "docs/preview/效果3_哲学字动.png",
+  "summary": "巨型字母位移 + 照片整页穿插，页数 = 图数×2+2；自动换片。"
+}

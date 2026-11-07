@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <clipPath id="paraClip" clipPathUnits="userSpaceOnUse">
+      <path d="M 837.32 0 L 1151.03 0 L 1046.46 720 L 732.75 720 Z"/>
+    </clipPath>
+  </defs>
+
+  <image href="../images/bg_blur.png" x="0" y="0" width="1280" height="720" preserveAspectRatio="none"/>
+
+  <rect x="0" y="0" width="1280" height="76.72" fill="#000000"/>
+  <rect x="0" y="643.21" width="1280" height="76.72" fill="#000000"/>
+
+  <image href="../images/para.jpg" x="732.75" y="0" width="418.28" height="720" preserveAspectRatio="none" clip-path="url(#paraClip)"/>
+
+  <text x="151" y="300" font-family="华文行楷" font-size="128" fill="#000000">喀纳斯湖</text>
+</svg>

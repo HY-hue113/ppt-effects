@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <image href="../images/bg.jpg" x="0" y="0" width="1280" height="720" preserveAspectRatio="none"/>
+  <rect x="0" y="0" width="1280" height="720" fill="#000000" opacity="0.3"/>
+
+  <text x="640" y="156" font-family="华文行楷" font-size="96" fill="#FFFFFF" text-anchor="middle">目录</text>
+
+  <text x="153" y="400" font-family="华文行楷" font-size="80" fill="#FFFFFF" text-anchor="middle">01</text>
+  <text x="446" y="400" font-family="华文行楷" font-size="80" fill="#FFFFFF" text-anchor="middle">02</text>
+  <text x="727" y="400" font-family="华文行楷" font-size="80" fill="#FFFFFF" text-anchor="middle">03</text>
+  <text x="1025" y="400" font-family="华文行楷" font-size="80" fill="#FFFFFF" text-anchor="middle">04</text>
+</svg>

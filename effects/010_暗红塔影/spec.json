@@ -1,0 +1,95 @@
+{
+  "id": "效果10",
+  "slug": "010_暗红塔影",
+  "name": "暗红塔影",
+  "created": "2026-11-06",
+  "source_reference": "教程视频 adcd4071…mp4（4:44）+ 素材 tu.png",
+  "materials": {
+    "min": 1,
+    "max": 1,
+    "orientation": "any",
+    "deficit": "none",
+    "checks": {
+      "min_white_border": 0.75,
+      "white_bg_blocking": true,
+      "accept_alpha": true
+    },
+    "requirement": "白底主体图（塔/建筑剪影）**或已抠好的透明 PNG** 二选一；非白底、无透明通道的图做不出线稿",
+    "verified": true
+  },
+  "method": "from-scratch",
+  "pages": 11,
+  "canvas": {
+    "format": "ppt169",
+    "cm": [
+      33.87,
+      19.05
+    ]
+  },
+  "palette": {
+    "deep_red": "#2B0908",
+    "glow_red": "#4A0E0C",
+    "gold_line": "#ECCE96",
+    "beam": "#F3D9A4",
+    "near_black": "#120303"
+  },
+  "subject": {
+    "type": "line-art silhouette",
+    "source": "tu.png（白底塔图）",
+    "process": "亮度反推 alpha → 染色 #ECCE96 → alpha*0.85 → 裁掉底部 26%（去水印）"
+  },
+  "title": {
+    "text": "PRESENTATION",
+    "font": "Times New Roman",
+    "size_pt": 104,
+    "letter_spacing": 18
+  },
+  "transition": {
+    "effect": "morph",
+    "duration_ms": 1800,
+    "inject_manually": true
+  },
+  "bars": {
+    "size_cm": [
+      13.76,
+      1.53
+    ],
+    "preset": "parallelogram",
+    "adj": 18000,
+    "backdrop": {
+      "same_shape": true,
+      "margin_emu": 60000,
+      "fill": "000000",
+      "alpha": 80000,
+      "z_below": true
+    },
+    "text": "独立 TextBox 浮在形状上"
+  },
+  "scripts": {
+    "build": "tools/build_effect10.py",
+    "bar_shape": "tools/bar_to_parallelogram.py",
+    "bar_backdrop": "tools/bar_add_black.py",
+    "bar_alpha": "tools/bar_black_alpha.py",
+    "morph": "tools/inject_morph.py"
+  },
+  "constraints": {
+    "export_lacks_transition": true,
+    "filter_by_prst_not_size": true,
+    "white_bg_must_be_removed": true
+  },
+  "ask_on_reuse": [
+    "标题文字",
+    "三条长条文案"
+  ],
+  "fonts": {
+    "used_in_reference": [
+      "EB Garamond"
+    ],
+    "recommended_free": [
+      "EB Garamond"
+    ],
+    "note": "参考件字体名已统一为开源字体；本机未装时会回退，版式仍成立。"
+  },
+  "preview": "docs/preview/效果10_暗红塔影.png",
+  "summary": "深红底 + 金色线稿 + 光晕光束；11 页，平滑 1.8 秒。"
+}

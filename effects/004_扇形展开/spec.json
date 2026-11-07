@@ -1,0 +1,105 @@
+{
+  "id": "效果4",
+  "slug": "004_扇形展开",
+  "name": "扇形展开",
+  "created": "2026-10-31",
+  "source_reference": "示范.pptx 第29-30页",
+  "materials": {
+    "min": 1,
+    "max": 1,
+    "aspects": [
+      1.77
+    ],
+    "aspect_tolerance": 0.06,
+    "orientation": "landscape",
+    "deficit": "none",
+    "requirement": "1 张横构图照片（约 1.77），同一张铺满整页并切成 12 片扇形",
+    "verified": true
+  },
+  "method": "template-transplant",
+  "pages": 2,
+  "background": {
+    "type": "slide-bg-blipfill",
+    "media": "ppt/media/image17.jpeg",
+    "effect": "lum",
+    "stretch": "fill"
+  },
+  "fans": {
+    "shape": "block arc (不完整圆)",
+    "count": 12,
+    "groups": [
+      {
+        "name": "right",
+        "count": 6,
+        "box_cm": [
+          38.44,
+          36.46
+        ],
+        "origin_cm": [
+          14.62,
+          0.82
+        ]
+      },
+      {
+        "name": "left",
+        "count": 6,
+        "box_cm": [
+          20.68,
+          19.51
+        ],
+        "origin_cm": [
+          -10.3,
+          -9.76
+        ]
+      }
+    ],
+    "fill": "same picture as background, blipFill",
+    "shadow": {
+      "count_per_slide": 24,
+      "blurRad": 127000,
+      "sx": 102000,
+      "sy": 102000,
+      "algn": "ctr",
+      "rotWithShape": 0,
+      "alpha_levels": [
+        90000,
+        40000
+      ]
+    }
+  },
+  "text": {
+    "content": "开学快乐",
+    "orientation": "vertical (eaVert)",
+    "font": "华文行楷",
+    "box_cm": [
+      2.54,
+      13.94
+    ],
+    "start_cm": [
+      -3.19,
+      4.7
+    ],
+    "end_cm": [
+      10.52,
+      2.49
+    ],
+    "ask_on_reuse": true
+  },
+  "transition": {
+    "page": 2,
+    "effect": "morph",
+    "morph_by": "byObject",
+    "p14_dur": 2000
+  },
+  "fonts": {
+    "used_in_reference": [
+      "霞鹜文楷"
+    ],
+    "recommended_free": [
+      "霞鹜文楷"
+    ],
+    "note": "参考件字体名已统一为开源字体；本机未装时会回退，版式仍成立。"
+  },
+  "preview": "docs/preview/效果4_扇形展开.png",
+  "summary": "12 片扇形收拢后 2 秒展开成扇面，竖排标题随后滑入。"
+}

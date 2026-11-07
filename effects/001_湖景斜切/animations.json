@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "slides": {
+    "slide_02": {
+      "transition": {
+        "effect": "morph",
+        "effect_options": { "morph_by": "object" },
+        "duration": 1.0
+      }
+    }
+  }
+}

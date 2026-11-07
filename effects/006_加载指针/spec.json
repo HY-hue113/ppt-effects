@@ -1,0 +1,123 @@
+{
+  "id": "效果6",
+  "slug": "006_加载指针",
+  "name": "加载指针",
+  "created": "2026-11-03",
+  "source_reference": "动画.pptx 第1页",
+  "materials": {
+    "min": 1,
+    "max": 1,
+    "aspects": [
+      1.3333
+    ],
+    "aspect_tolerance": 0.08,
+    "orientation": "any",
+    "deficit": "none",
+    "checks": {
+      "max_mean_luma": 120
+    },
+    "requirement": "1 张深色照片（1200×900 槽位）；亮图会让白色标题与指针失去对比",
+    "verified": true
+  },
+  "method": "template-transplant",
+  "pages": 1,
+  "canvas": {
+    "format": "ppt169",
+    "emu": [
+      12192000,
+      6858000
+    ]
+  },
+  "background": {
+    "type": "slide-bg-blipfill",
+    "media": "ppt/media/image1.jpeg",
+    "size": [
+      1200,
+      900
+    ],
+    "note": "上面压一个铺满的纯色矩形（矩形 8）做暗化"
+  },
+  "text": {
+    "content": "喀纳斯湖畔",
+    "font": "华文行楷",
+    "box_cm": [
+      4.33,
+      4.15,
+      27.42,
+      6.16
+    ],
+    "entrance": {
+      "type": "fade",
+      "duration_ms": 1500,
+      "trigger": "on-click"
+    }
+  },
+  "spinner": {
+    "group": "组合 10",
+    "size_cm": [
+      70,
+      70
+    ],
+    "origin_cm": [
+      -16.96,
+      -34.69
+    ],
+    "children": [
+      "矩形 2",
+      "矩形 4",
+      "矩形 6",
+      "椭圆 9"
+    ],
+    "sequence": [
+      {
+        "by_deg": 270,
+        "duration_ms": 1000
+      },
+      {
+        "by_deg": -540,
+        "duration_ms": 1000
+      },
+      {
+        "by_deg": 540,
+        "duration_ms": 1000
+      },
+      {
+        "by_deg": -420,
+        "duration_ms": 1000
+      },
+      {
+        "by_deg": 300,
+        "duration_ms": 1000
+      },
+      {
+        "by_deg": -210,
+        "duration_ms": 1000
+      },
+      {
+        "by_deg": 60,
+        "duration_ms": 750
+      }
+    ],
+    "sum_deg": 0,
+    "first_trigger": "after-previous",
+    "exit": {
+      "filter": "barn(outVertical)",
+      "duration_ms": 499
+    }
+  },
+  "timing_patch": {
+    "note": "首段改'在上一动画之后'需同时改组级与首段两处：组 cTn delay indefinite->0 且 nodeType=afterEffect；首段 cTn nodeType=afterEffect、delay=0",
+    "script": "tools/patch_effect6_timing.py"
+  },
+  "fonts": {
+    "used_in_reference": [
+      "霞鹜文楷"
+    ],
+    "recommended_free": [
+      "霞鹜文楷"
+    ],
+    "note": "参考件字体名已统一为开源字体；本机未装时会回退，版式仍成立。"
+  },
+  "preview": "docs/preview/效果6_加载指针.png",
+  "summary": "单页：深色底 + 七段变速旋转指针 + 标题淡入 + 百叶窗退场。"
+}

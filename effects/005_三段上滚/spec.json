@@ -1,0 +1,78 @@
+{
+  "id": "效果5",
+  "slug": "005_三段上滚",
+  "name": "三段上滚",
+  "created": "2026-10-31",
+  "source_reference": "哲学-什么是真实的存在.pptx 第17-19页",
+  "materials": {
+    "min": 1,
+    "max": 1,
+    "orientation": "any",
+    "deficit": "none",
+    "requirement": "1 张照片做整页背景，三页共用，替换一次即可",
+    "verified": true
+  },
+  "method": "template-transplant",
+  "pages": 3,
+  "background": {
+    "type": "slide-bg-blipfill",
+    "media": "ppt/media/image2.jpeg",
+    "note": "三页共用同一张照片，替换一次即可"
+  },
+  "decor": {
+    "chapter_number": {
+      "text": "01",
+      "edge_bleed": "left"
+    },
+    "arc_line": {
+      "type": "freeform custGeom",
+      "fill": "slide-background (useBgFill=1)",
+      "note": "转盘填的是幻灯片背景，透出未被蒙版压暗的原图，形成亮窗；禁止改成 a:noFill",
+      "origin_cm": [
+        -13.0,
+        -2.22
+      ],
+      "size_cm": [
+        23.64,
+        23.49
+      ]
+    }
+  },
+  "text": {
+    "source": "沿用参考稿",
+    "title": "什么是「存在」",
+    "paragraphs": [
+      "真正的“存在”，不是我们眼睛看到的那些生灭变化的事物。",
+      "感官看到的世界，不断产生、消亡、改变，这些变化的事物只是表象；",
+      "唯有不变、唯一、永恒，才是存在本身。",
+      "然后，存在是永恒的，不存在生成与毁灭。",
+      "在我们日常生活的所见所感中，花既有开放的时候，也有凋零的时候；人会出生、衰老死亡。",
+      "这些事物从“无”变成“有”，再从“有”变成“无”。但巴门尼德认为：真正的存在不可能从无里诞生，也不会消失归于无。"
+    ],
+    "scroll": "三页文本框 y 坐标递进上移，非动画",
+    "offscreen_rule": "该在画布外的文本框必须整体出画（下一页的段落 y ≥ 19.05，已滚走的 y+h ≤ 0），不许露出一行或一角；当前段落与标题、01 才是画布内元素"
+  },
+  "transition": {
+    "pages": [
+      1,
+      2,
+      3
+    ],
+    "effect": "morph",
+    "morph_by": "byObject",
+    "p14_dur": 1500
+  },
+  "fonts": {
+    "used_in_reference": [
+      "思源宋体",
+      "HarmonyOS Sans SC"
+    ],
+    "recommended_free": [
+      "思源宋体",
+      "HarmonyOS Sans SC"
+    ],
+    "note": "参考件字体名已统一为开源字体；本机未装时会回退，版式仍成立。"
+  },
+  "preview": "docs/preview/效果5_三段上滚.png",
+  "summary": "三页共用一张底图，正文随翻页上滚，配大号章节号与弧形线。"
+}

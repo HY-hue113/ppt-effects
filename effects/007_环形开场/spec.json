@@ -1,0 +1,127 @@
+{
+  "id": "效果7",
+  "slug": "007_环形开场",
+  "name": "环形开场",
+  "created": "2026-11-04",
+  "source_reference": "用户手调版 效果7.pptx（8 页）",
+  "materials": {
+    "min": 1,
+    "max": 1,
+    "aspects": [
+      1.3333
+    ],
+    "aspect_tolerance": 0.08,
+    "orientation": "any",
+    "deficit": "none",
+    "requirement": "1 张照片（1200×900 槽位）；只做开场 8 页就只换 image1，做整套 25 页则 13 处媒体槽逐一替换（各自按原尺寸裁切）",
+    "verified": true
+  },
+  "method": "template-transplant",
+  "pages": 25,
+  "background": {
+    "type": "slide-bg-blipfill",
+    "media": "ppt/media/image1.jpeg",
+    "size": [
+      1200,
+      900
+    ],
+    "replace_only": true
+  },
+  "opener": {
+    "page": 1,
+    "blades": {
+      "white": 24,
+      "black": 24,
+      "white_fill": "useBgFill",
+      "geometry": "bezier rounded wedge, 8 control points"
+    },
+    "stack": [
+      "slide bg",
+      "black veil rect",
+      "white blades",
+      "black blades"
+    ],
+    "animation": {
+      "presetID": 23,
+      "kind": "grow/shrink entrance",
+      "count": 48
+    },
+    "timing": {
+      "start_ms": 200,
+      "step_ms": 140,
+      "duration_ms": 140,
+      "black_start_ms": 1150
+    },
+    "note": "步长必须等于单次时长，否则会越转越慢"
+  },
+  "pages_detail": [
+    {
+      "page": 1,
+      "role": "环形扫光开场"
+    },
+    {
+      "page": 2,
+      "role": "圆形取景（大圆 + 4 图 + 十字线）"
+    },
+    {
+      "page": 3,
+      "role": "圆形收拢过渡"
+    },
+    {
+      "page": 4,
+      "role": "开学快乐 四字散排"
+    },
+    {
+      "page": 5,
+      "role": "位移"
+    },
+    {
+      "page": 6,
+      "role": "位移"
+    },
+    {
+      "page": 7,
+      "role": "位移"
+    },
+    {
+      "page": 8,
+      "role": "收束"
+    }
+  ],
+  "text": {
+    "content": "开学快乐",
+    "font": "华文行楷",
+    "ask_on_reuse": true
+  },
+  "constraints": {
+    "never_rebuild_blades": true,
+    "black_must_match_white": true,
+    "static_preview_is_black": true
+  },
+  "script": "tools/build_effect7.py",
+  "appended_pages": {
+    "pages": "9-11",
+    "source": "职业规划-加一博主同款梦想启航.pptx 第7-9页",
+    "note": "背景替换为当前素材；第10页湖、第11页盘山；文字清空但保留文本框；无动画"
+  },
+  "reference_note": "用户修复版（2026-11-04）：25 页，13 张媒体，无重复 Override；第 9-11 页经 PowerPoint 修复后仅剩 1 个形状",
+  "learned": [
+    "拷入页若图片为 .jpg，必须补 Default Extension=jpg",
+    "slide 的 layout Target 必须是 ../slideLayouts/xxx.xml",
+    "[Content_Types].xml 里每个 PartName 只能有一条 Override",
+    "媒体要按内容去重，否则体积暴涨（84MB -> 13MB）"
+  ],
+  "fonts": {
+    "used_in_reference": [
+      "霞鹜文楷",
+      "思源宋体"
+    ],
+    "recommended_free": [
+      "霞鹜文楷",
+      "思源宋体"
+    ],
+    "note": "参考件字体名已统一为开源字体；本机未装时会回退，版式仍成立。"
+  },
+  "preview": "docs/preview/效果7_环形开场.png",
+  "summary": "48 片刀片扫光开场 → 圆形取景 → 四字散排；整套 25 页。"
+}
