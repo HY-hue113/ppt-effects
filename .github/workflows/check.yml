@@ -1,0 +1,52 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install python-pptx Pillow lxml
+
+      - name: Specs parse
+        run: |
+          python - <<'PY'
+          import glob, json, sys
+          bad = []
+          for p in sorted(glob.glob('effects/*/spec.json')):
+              try:
+                  json.load(open(p, encoding='utf-8'))
+              except Exception as e:
+                  bad.append((p, e))
+          print('specs:', len(glob.glob('effects/*/spec.json')))
+          sys.exit(1 if bad else 0)
+          PY
+
+      - name: Materials spec listing
+        run: python tools/check_materials.py --list
+
+      - name: Recipe/reference consistency
+        run: |
+          python - <<'PY'
+          import glob, os, sys
+          bad = []
+          for d in sorted(glob.glob('effects/*')):
+              if not os.path.isfile(os.path.join(d, 'recipe.md')):
+                  bad.append(d + ' 缺 recipe.md')
+              if not os.path.isfile(os.path.join(d, 'spec.json')):
+                  bad.append(d + ' 缺 spec.json')
+              if not glob.glob(os.path.join(d, 'reference', '*.pptx')):
+                  bad.append(d + ' 缺 reference/*.pptx')
+          print('\n'.join(bad) or 'structure ok')
+          sys.exit(1 if bad else 0)
+          PY
