@@ -1,5 +1,7 @@
 # ppt-effects · PPT 动效配方库
 
+> **Skill 名 `ppt-effects`｜中文名「PPT 动效配方库」｜为 DeepSeek Harness 编写，也可脱离 DSH 手动使用**
+
 > 把「调好的 PPT 动画效果」存成可复用的模块：一份 `recipe.md`（人读的意图与坑）+ 一份 `spec.json`（机器读的精确参数）+ 一份 `reference/*.pptx`（可直接打开、按配方套用）。
 > 给一张图、一段文案，按配方就能出同款动效——不用从零调时间轴。
 
@@ -89,6 +91,12 @@ tools/
 - 预览图用中性色块渲染，不含第三方图片；
 - **效果8 的版式源自第三方模板**（作者信息已移除、文字已替换为占位文字、配色已重做），版式相似性由使用者自行评估；
 - 其它第三方素材（他人模板、网络图片、嵌入字体、音视频）已全部移除。
+
+## 依赖与致谢
+
+- **ppt-master**（MIT，© 2025-2026 Hugo He）：效果 1、2 短版的 SVG→PPTX 管线依赖它——`project_manager.py`、`svg_to_pptx.py`、`svg_quality_checker.py` 均来自该技能。本仓库**不包含**其代码，仅调用；装法见各自的 `recipe.md`。
+- **DeepSeek Harness**：本库以 Skill 形式编写，入口是 `SKILL.md`（frontmatter 的 `name: ppt-effects`）。在 DSH 里直接说「用效果6 做一份」即可；不装 DSH 也能用——按 `docs/USER-GUIDE.md` 手动跑命令、或直接改 `reference/*.pptx`。
+- 字体与图片的授权边界见下一节。
 
 ## 许可
 
