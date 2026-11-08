@@ -121,7 +121,7 @@
     },
     {
       "page": 5,
-      "media": "ppt/media/image3.png",
+      "media": "ppt/media/image3.jpg",
       "aspect": 1.58,
       "fill": "group"
     },
@@ -187,6 +187,6 @@
     ],
     "note": "参考件字体名已统一为开源字体；本机未装时会回退，版式仍成立。"
   },
-  "preview": "docs/preview/效果3_哲学字动.png",
+  "preview": "docs/preview/效果3_哲学字动.jpg",
   "summary": "巨型字母位移 + 照片整页穿插，页数 = 图数×2+2；自动换片。"
 }

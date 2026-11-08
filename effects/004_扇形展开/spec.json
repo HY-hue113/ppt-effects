@@ -100,6 +100,6 @@
     ],
     "note": "参考件字体名已统一为开源字体；本机未装时会回退，版式仍成立。"
   },
-  "preview": "docs/preview/效果4_扇形展开.png",
+  "preview": "docs/preview/效果4_扇形展开.jpg",
   "summary": "12 片扇形收拢后 2 秒展开成扇面，竖排标题随后滑入。"
 }

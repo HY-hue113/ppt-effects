@@ -3,7 +3,7 @@
   "slug": "010_暗红塔影",
   "name": "暗红塔影",
   "created": "2026-11-06",
-  "source_reference": "教程视频 adcd4071…mp4（4:44）+ 素材 tu.png",
+  "source_reference": "教程视频 adcd4071…mp4（4:44）+ 素材 tu.jpg",
   "materials": {
     "min": 1,
     "max": 1,
@@ -90,6 +90,6 @@
     ],
     "note": "参考件字体名已统一为开源字体；本机未装时会回退，版式仍成立。"
   },
-  "preview": "docs/preview/效果10_暗红塔影.png",
+  "preview": "docs/preview/效果10_暗红塔影.jpg",
   "summary": "深红底 + 金色线稿 + 光晕光束；11 页，平滑 1.8 秒。"
 }

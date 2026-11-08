@@ -355,6 +355,7 @@ def main() -> int:
     ap.add_argument('--variant', default=None, help='多档效果的档位，如 long')
     ap.add_argument('--json', action='store_true', help='输出 JSON（给脚本/自动化读）')
     ap.add_argument('--list', action='store_true', help='列出所有效果的素材要求')
+    ap.add_argument('--brief', action='store_true', help='只输出一行结论（省 token，给 Agent 用）')
     args = ap.parse_args()
 
     if args.list:
@@ -379,6 +380,13 @@ def main() -> int:
     images = [probe(p) for p in paths]
     check_count(len(images), mats, issues)
     check_images(images, mats, issues)
+
+    if getattr(args, 'brief', False):
+        bad = [x for x in issues if x.get('level') in ('BLOCK', 'WARN')]
+        worst = 'BLOCK' if any(x.get('level') == 'BLOCK' for x in bad) else ('WARN' if bad else 'PASS')
+        head = bad[0]['msg'] if bad else '素材可用'
+        print('%s %s | %d 张 | %s' % (worst, spec.get('id'), len(images), head.replace(chr(10), ' ')[:60]))
+        return 0 if worst != 'BLOCK' else 1
 
     if args.json:
         import contextlib
