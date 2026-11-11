@@ -180,6 +180,9 @@
     "crop_allowed": true,
     "deficit": "none",
     "requirement": "每张图一块竖版面板（约 15.4×19.1cm，比例 0.81）；N 张图 → N+1 页；少于 2 张做不成，多于 9 张会多出面板。",
-    "verified": true
-  }
+    "verified": true,
+    "ask_count": true,
+    "ask_note": "图片张数决定页数与配对方式，开工前必须先问用户给几张。"
+  },
+  "preview": "docs/preview/效果11_中式滑转.jpg"
 }

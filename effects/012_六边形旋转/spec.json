@@ -85,6 +85,9 @@
     "deficit": "repeat",
     "allow_repeat": true,
     "requirement": "每页一张图：铺满整页做底，同时裁进内六边形（两种比例都要用到）；给 1 张可重复用满 6 页，给 4 张则每页各不相同。",
-    "verified": true
-  }
+    "verified": true,
+    "ask_count": true,
+    "ask_note": "图片张数决定页数与配对方式，开工前必须先问用户给几张。"
+  },
+  "preview": "docs/preview/效果12_六边形旋转.jpg"
 }

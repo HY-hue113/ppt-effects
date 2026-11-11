@@ -105,18 +105,23 @@
     "image_rule": "images/*.jpg = 清晰背景；images/*.png = 模糊覆盖层"
   },
   "method_kind": "template-clone",
-  "summary": "5 页：模糊满页底图 + 大字三段位移（飞入 / 停留 / 推出），靠 morph 串起来。",
+  "summary": "5 页：模糊满页底图 + 大字三段位移（飞入/停留/推出）；可单图共用，也可每页一张。",
   "materials": {
     "min": 1,
-    "max": 1,
+    "max": 5,
+    "recommended": 5,
     "aspects": [
       1.82
     ],
     "aspect_tolerance": 0.1,
     "orientation": "landscape",
     "crop_allowed": true,
-    "deficit": "none",
-    "requirement": "1 张横构图照片，铺满整页后统一模糊，作为文字底；画面越干净、越亮，大字越清楚（模糊会抹掉细节，但也保留色块）。",
-    "verified": true
-  }
+    "deficit": "repeat",
+    "allow_repeat": true,
+    "requirement": "1–5 张横构图照片：给 1 张即 5 页共用；给 N 张则第 1–5 页各用一张，不足循环复用。每页统一模糊做底，右侧竖条用同图清晰版切片。",
+    "verified": true,
+    "ask_count": true,
+    "ask_note": "图片张数决定页数与配对方式，开工前必须先问用户给几张。"
+  },
+  "preview": "docs/preview/效果13_模糊遮罩.jpg"
 }

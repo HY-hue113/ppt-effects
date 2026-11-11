@@ -129,5 +129,6 @@
     "deficit": "none",
     "requirement": "1 张 16:9 横图作整页背景（会被拉伸铺满，不做裁切）；色调偏暖、主体偏一侧更好，中心留给标题。",
     "verified": true
-  }
+  },
+  "preview": "docs/preview/效果15_枫叶飘动.jpg"
 }
