@@ -1,0 +1,133 @@
+{
+  "id": "效果15",
+  "slug": "015_枫叶飘动",
+  "name": "枫叶飘动",
+  "created": "2026-11-11",
+  "method_kind": "template-clone",
+  "reference": "reference/效果15.pptx",
+  "canvas": {
+    "w_cm": 33.87,
+    "h_cm": 19.05,
+    "pages": 1,
+    "size_kb": 159
+  },
+  "background": {
+    "type": "picture",
+    "xml": "p:bg → p:bgPr → a:blipFill",
+    "embed": "rId2",
+    "attrs": {
+      "dpi": "0",
+      "rotWithShape": "1"
+    },
+    "effects": [
+      "a:lum（亮度调整）"
+    ],
+    "stretch": "a:stretch → a:fillRect（拉伸铺满，不裁切）"
+  },
+  "shape": {
+    "name": "任意多边形: 形状 149",
+    "id": 150,
+    "type": "custGeom（SVG 转形状）",
+    "pos_cm": [
+      -35.95,
+      -35.74
+    ],
+    "size_cm": [
+      80.0,
+      80.0
+    ],
+    "points": 965,
+    "fill": "a:noFill（仅描线，无填充）",
+    "note": "80×80cm 大画布，仅中间一段落在可视区"
+  },
+  "texts": [
+    {
+      "name": "文本框 1",
+      "id": 2,
+      "pos_cm": [
+        13.97,
+        6.14
+      ],
+      "size_cm": [
+        5.93,
+        3.39
+      ],
+      "content": "标题",
+      "size_pt": 72,
+      "bold": true,
+      "geometry": "prstGeom rect",
+      "fill": "noFill",
+      "autofit": "spAutoFit"
+    },
+    {
+      "name": "文本框 2",
+      "id": 3,
+      "pos_cm": [
+        13.45,
+        9.48
+      ],
+      "size_cm": [
+        7.01,
+        2.82
+      ],
+      "content": "副标题",
+      "size_pt": 60,
+      "bold": true,
+      "geometry": "prstGeom rect",
+      "fill": "noFill",
+      "autofit": "spAutoFit"
+    }
+  ],
+  "animation": {
+    "targets": [
+      150,
+      2,
+      3
+    ],
+    "fade": [
+      "标题/副标题 in-out fade"
+    ],
+    "motion": {
+      "type": "p:animMotion",
+      "origin": "layout",
+      "pathEditMode": "relative",
+      "path": "M 0 0 L 0.13906 0.62871 L 0.86797 0.36135 L 0.38034 0.08542 L 0.38034 0.08588",
+      "pts": 5
+    },
+    "rotation": "p:animRot by=21600000（360°）",
+    "scale": "p:animScale + p:set ×3",
+    "durations_ms": [
+      1000,
+      1500,
+      2500,
+      3000,
+      4000
+    ]
+  },
+  "summary": "单页：满页图片背景 + 枫叶路径飘动 + 大标题；只换背景图与文字。",
+  "status": "baseline-archived",
+  "render_logic": "背景图铺满整页，叶片形状（custGeom）无填充但作为可见窗口：图像只在形状轮廓内显示，其余被遮住",
+  "swap_rule": "换素材只改 p:bg 的 a:blip r:embed（slide1.xml.rels 换 Target）；形状 149、文字、动画全部不动",
+  "fixed_shape": "形状是固定的 965 点 SVG 转形状，换图不改变形状；要换形状必须另导 SVG 再转形状",
+  "verified": "已用 开学.jpg 验证：1 页成品 708 KB，静态帧正常",
+  "lessons": [
+    "背景图透过形状窗口显示，不是普通铺底",
+    "换图只动 rId2 的 Target",
+    "形状与 timing 按 id 绑定，不能重建对象",
+    "本地渲染只能看静止帧，动画需 PowerPoint F5 验证"
+  ],
+  "pages": 1,
+  "materials": {
+    "min": 1,
+    "max": 1,
+    "aspects": [
+      1.7778
+    ],
+    "aspect_tolerance": 0.1,
+    "orientation": "landscape",
+    "crop_allowed": true,
+    "deficit": "none",
+    "requirement": "1 张 16:9 横图作整页背景（会被拉伸铺满，不做裁切）；色调偏暖、主体偏一侧更好，中心留给标题。",
+    "verified": true
+  }
+}

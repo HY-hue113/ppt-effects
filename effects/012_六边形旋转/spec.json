@@ -1,0 +1,90 @@
+{
+  "id": "效果12",
+  "slug": "012_六边形旋转",
+  "name": "六边形旋转",
+  "created": "2026-11-09",
+  "method": "ppt-master Edit Native roundtrip",
+  "pages": 6,
+  "mechanism": "背景图片填充 + 25% 黑遮罩 + 六边形（无填充白线）随页放大并旋转；标题水平位移；平滑切换",
+  "background": {
+    "type": "p:bg blipFill",
+    "note": "图片背景填充，本地 LibreOffice 渲染不出来，但 PowerPoint 正常"
+  },
+  "layers": [
+    "矩形（满页黑色遮罩 25% 透明）",
+    "六边形（noFill + 白线）",
+    "副标题",
+    "主标题"
+  ],
+  "hexagon": {
+    "p1": {
+      "size_cm": 7.9,
+      "x": 14.4,
+      "y": 5.0,
+      "rot_deg": 0
+    },
+    "p2": {
+      "size_cm": 11.2,
+      "x": 11.6,
+      "y": 4.0,
+      "rot_deg": 35.4
+    },
+    "rule": "每页放大 + 旋转同时发生（约 1.42 倍 / 35°）"
+  },
+  "title": {
+    "move": "水平位移，不是垂直",
+    "p1_x": -18.0,
+    "p2_x": 1.8,
+    "unit": "cm",
+    "rule": "上一页标题推到画外，新标题推进来"
+  },
+  "transition": {
+    "effect": "morph",
+    "pages": 6
+  },
+  "no_inner_hexagon": "不要用「幻灯片背景填充」做内六边形，背景图+遮罩+白线框已足够",
+  "constraints": [
+    "以用户成品为模板，只替换 ppt/media 字节，不重建形状与包结构",
+    "背景填空是 p:bg blipFill，本地渲染不可作为判断依据",
+    "六边形必须缩放+旋转同步，只转不放会生硬"
+  ],
+  "script": "tools/eff12_swap.py",
+  "pptmaster": {
+    "route": "Edit Native PPTX",
+    "workspace": "projects/eff12_rt_20261110",
+    "image_map": "image1=P1/P2, image2=P3, image3=P4"
+  },
+  "method_kind": "template-clone",
+  "reference_note": "用户手改 6 页版为基准（每页一个六边形窗口 + 主/副标题 + 满页背景）",
+  "structure": {
+    "bg": "每页满页底图",
+    "hexagon": "外六边形(白线) + 内六边形(图片填充)",
+    "text": "主标题 + 副标题"
+  },
+  "summary": "6 页：满页底图 + 白线外六边形旋转 + 图片填充内六边形；每页一张图。",
+  "lessons": [
+    "内外六边形尺寸/角度不同是设计，不要对齐",
+    "标题左右交替是模板自带",
+    "每页仅一个图片填充对象，按页序换图"
+  ],
+  "status": "baseline-archived",
+  "image_source": "幻灯片背景填充（p:bg blipFill），不是形状填充",
+  "image_rule": "前 3 页用同一张图（开场组）；第 4 页起每页不同",
+  "remind_on_call": "调用时提醒：前 3 页建议同图",
+  "materials": {
+    "min": 1,
+    "max": 4,
+    "recommended": 4,
+    "aspects": [
+      1.78,
+      1.0
+    ],
+    "aspect_tolerance": 0.12,
+    "orientation": "any",
+    "crop_allowed": true,
+    "deficit": "repeat",
+    "allow_repeat": true,
+    "requirement": "每页一张图：铺满整页做底，同时裁进内六边形（两种比例都要用到）；给 1 张可重复用满 6 页，给 4 张则每页各不相同。",
+    "verified": true
+  }
+}

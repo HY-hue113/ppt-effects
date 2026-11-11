@@ -1,0 +1,62 @@
+{
+  "id": "效果14",
+  "slug": "014_图片轮播",
+  "name": "立体图片轮播",
+  "created": "2026-11-11",
+  "pages": 11,
+  "method_kind": "template-clone",
+  "reference_note": "用户手改 6 页版为基准",
+  "structure": {
+    "nav": "顶部 01–05 标签（圆角高亮块 + 年份/序号 + 标题）",
+    "main": "每页一张大图（约 17.4×9.8cm）",
+    "thumb": "左下缩略图（5.7×3.2cm）",
+    "text": "标题 + 副标题 + 正文（左侧，随页位移）",
+    "bg": "满页底图 + 顶部深色条"
+  },
+  "transition": {
+    "effect": "morph",
+    "pages": 6
+  },
+  "note": "图片按页轮播：当前页大图、下一页大图在画布外，缩略图跟随",
+  "image_limit": 10,
+  "must_warn": "需要 >10 个标签时不支持：模板上限 10，本项目不做加法",
+  "warn_script": "图片数为 N 时：N≤5 直接套用；N>5 先停下来问用户（缩标签、分两行、还是换做法）",
+  "summary": "11 页立体轮播：顶部 01–10 标签、每页一张大图 + 缩略图，左右推拉。",
+  "status": "verified-4img",
+  "lessons": [
+    "图片数>5 必须先提示（模板只有 5 个标签）",
+    "不要往模板里加第 6 个标签（原生恢复会吃掉改动）",
+    "重复源页要给独立 svg 名",
+    "图片按页序统一填充最稳"
+  ],
+  "must_ask": "调用时先问：需要几个标签/几页（≤10，只减不增）",
+  "ask_script": "1) 问标签数（≤10）；2) 问每页用哪张图；3) 超出 10 直接说明不支持",
+  "tabs": 10,
+  "tab_rule": "标签只减不增：现有 01–10，只能隐藏不能新增",
+  "image_map_rule": {
+    "页数": "N+1",
+    "P1": "C 位 = 图1+图2 重叠",
+    "Pk": "A=图k, B=图k+1, C=图k+2, D=图k-1（越界隐藏）",
+    "图位": "A x15.7/y4/w17.4 | B x0/y15.8/w5.7 | C x-6/y15.8/w5.7 | D x37/y4/w17.4"
+  },
+  "highlight": "中心对齐激活编号；P1 移到画布外左上(-6, 0.93)",
+  "text_dedup": "TextBox 13/15 为重复小副本，必须隐藏（y=-40cm），否则文字重影",
+  "bg": "p:bg 图片填充，按页替换 rels Target",
+  "script": "tools/eff14_gen.py",
+  "materials": {
+    "min": 3,
+    "max": 10,
+    "recommended": 6,
+    "aspects": [
+      1.78,
+      1.6,
+      1.33
+    ],
+    "aspect_tolerance": 0.1,
+    "orientation": "landscape",
+    "crop_allowed": true,
+    "deficit": "fewer-pages",
+    "requirement": "3–10 张横图（同一张会在本页主图与缩略图重复出现）；N 张 → N+1 页，标签数随之只减不增。",
+    "verified": true
+  }
+}

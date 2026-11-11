@@ -1,0 +1,185 @@
+{
+  "id": "效果11",
+  "slug": "011_中式滑转",
+  "name": "中式滑转（多图版）",
+  "created": "2026-11-09",
+  "source_reference": "用户手改版 效果11-中式滑转-严格版.pptx（4 页）",
+  "method": "ppt-master Edit Native roundtrip",
+  "pages_rule": "页数 = a+1；a=1 时为 2 页（封面 + 单图页，色左+字左/图右）；a 奇数末页 色左+字左/图右；a 偶数末页保持 色右+字右/图左",
+  "direction_rule": "第 i 页（i≥2）滑入方向左右交替",
+  "canvas": {
+    "format": "ppt169",
+    "cm": [
+      33.87,
+      19.05
+    ]
+  },
+  "panels": {
+    "geometry": {
+      "preset": "parallelogram",
+      "adj_deg": 35,
+      "height_cm": 19.05
+    },
+    "body": {
+      "name": "小四边形副本",
+      "x_cm": 7.21,
+      "width_cm": 19.62,
+      "fill": "#F3EADC",
+      "fixed": true
+    },
+    "picture": {
+      "name": "…图",
+      "width_cm": 15.37,
+      "x_cm": {
+        "odd": 22.91,
+        "even": -4.14
+      },
+      "fill": "blipFill"
+    },
+    "solid": {
+      "name": "…副本",
+      "width_cm": 15.37,
+      "x_cm": {
+        "odd": -4.24,
+        "even": 22.81
+      },
+      "fill": "theme"
+    },
+    "text_group": {
+      "width_cm": 3.33,
+      "x_cm": {
+        "odd": 29.05,
+        "even": 1.77
+      },
+      "contents": [
+        "竖排标题",
+        "正文"
+      ]
+    }
+  },
+  "background": {
+    "segments": [
+      {
+        "pages": "1-2",
+        "bg": "#3A1113",
+        "solid_panel": "#3A1113"
+      },
+      {
+        "pages": "3-4",
+        "bg": "#C35D09",
+        "solid_panel": "#C35D09"
+      }
+    ],
+    "note": "每 2 页换一次色，形成段落感"
+  },
+  "z_order": [
+    "picture",
+    "solid",
+    "body",
+    "text_group",
+    "decor"
+  ],
+  "transition": {
+    "effect": "morph",
+    "p14_dur": 1500,
+    "morph_by": "object",
+    "from_page": 2
+  },
+  "constraints": [
+    "所有面板同尺寸（正文板除外），否则 morph 会缩放变形、边缘出缝",
+    "不要用全屏遮罩：遮罩是面板之间的相对遮挡",
+    "正文板必须四页固定，作为滑动参照物",
+    "图片板与色板必须分居两侧",
+    "文字必须成组并随面板移动",
+    "页数 = 1 + N，不能少页"
+  ],
+  "script": "tools/eff11_multi.py",
+  "text": {
+    "ask_before_writing": true,
+    "ask_items": [
+      "文本框数量",
+      "每页文字内容",
+      "字体",
+      "字号"
+    ],
+    "note": "文字参数随实际内容而定，不写死；调用前必须先问四项，用户在同一条消息里给过的不用重复问",
+    "boxes_per_page": {
+      "default": 2,
+      "labels": [
+        "竖排标题",
+        "正文"
+      ],
+      "variant": "可只用标题（--no-body）"
+    },
+    "fonts": {
+      "title": "华文行楷",
+      "body": "微软雅黑"
+    },
+    "sizes_pt": {
+      "title": 40,
+      "body": 16
+    },
+    "orientation": {
+      "title": "vertical(eaVert)",
+      "body": "horizontal"
+    },
+    "per_page": true,
+    "cli": {
+      "title": "--title 可重复，逐页对应；不足复用最后一个",
+      "body": "--body 可重复，逐页对应",
+      "font": [
+        "--title-font",
+        "--body-font"
+      ],
+      "size": [
+        "--title-size",
+        "--body-size"
+      ],
+      "no_body": "--no-body 只放标题"
+    },
+    "defaults_are_only_suggestions": true
+  },
+  "background_rule": "背景色 = 该页层级最高的纯色色板颜色（支持 schemeClr + lumMod，从 theme1.xml 解析）",
+  "pptmaster": {
+    "route": "Edit Native PPTX",
+    "workspace": "projects/eff11_rt_20261110",
+    "image_map": "image1=P1/P2, image2=P2/P3, image3=P3/P4"
+  },
+  "strict_mapping": "小四边形副本K图 ← 第K张图；小四边形副本K ← 第K号颜色；同名同填充",
+  "layer_order": [
+    "文本框组合(n-1)",
+    "纯色填充小色块(n-1)",
+    "标题(n-1)",
+    "正文(n-1)",
+    "文本框组合n",
+    "纯色填充小色块n",
+    "米色纯色填充小色块",
+    "图片填充小色块(n-1)",
+    "图片填充小色块n"
+  ],
+  "numbering": "正文页数字 = 页序-1",
+  "colors_each_page_unique": true,
+  "no_reuse": "本效果不允许图片复用：每张图只用一次，页数 = a + 1",
+  "single_image": {
+    "pages": 2,
+    "layout": "P2 = 色左 + 字左 / 图右",
+    "note": "只有一块图片板（无上一张）"
+  },
+  "method_kind": "template-clone",
+  "pages": 10,
+  "summary": "每张图一块竖版面板，滑动换页；9 张图 → 10 页，适合多图集。",
+  "materials": {
+    "min": 2,
+    "max": 9,
+    "recommended": 5,
+    "aspects": [
+      0.81
+    ],
+    "aspect_tolerance": 0.1,
+    "orientation": "portrait",
+    "crop_allowed": true,
+    "deficit": "none",
+    "requirement": "每张图一块竖版面板（约 15.4×19.1cm，比例 0.81）；N 张图 → N+1 页；少于 2 张做不成，多于 9 张会多出面板。",
+    "verified": true
+  }
+}

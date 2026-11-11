@@ -1,0 +1,122 @@
+{
+  "id": "效果13",
+  "slug": "013_模糊遮罩",
+  "name": "模糊遮罩",
+  "created": "2026-11-10",
+  "pages": 5,
+  "method": "ppt-master Edit Native roundtrip（模板套用）+ 媒体替换",
+  "background": {
+    "type": "p:bg blipFill",
+    "image": "模糊后的图（半径50 / 亮度-10）"
+  },
+  "layers": [
+    "满页模糊图",
+    "4 个文本框",
+    "六边形（P4 起）"
+  ],
+  "text": {
+    "boxes": 4,
+    "labels": [
+      "主标题",
+      "副标题",
+      "正文",
+      "标签"
+    ],
+    "sizes_pt": [
+      72,
+      36,
+      32,
+      28
+    ],
+    "fonts": [
+      "华文行楷",
+      "微软雅黑",
+      "微软雅黑",
+      "微软雅黑"
+    ],
+    "x_cm": [
+      2.1,
+      1.8,
+      1.8,
+      2.8
+    ],
+    "y_on_cm": [
+      3.0,
+      6.3,
+      8.9,
+      11.3
+    ],
+    "y_off_cm": [
+      -10.0,
+      -6.7,
+      -4.1,
+      -1.7
+    ]
+  },
+  "sequence": {
+    "P1": "文字在画布上方（y_off）=== 隐藏",
+    "P2": "文字落位（y_on）=== 飞入",
+    "P3": "与 P2 相同 === 停留帧",
+    "P4": "+ 六边形在画布外 x=-18 === 准备推入",
+    "P5": "六边形到 x=1.8；文字左移到 x=-16.1；主标题变竖排(3.7x8.5cm) === 换页"
+  },
+  "hexagon": {
+    "size_cm": [
+      16.8,
+      14.5
+    ],
+    "fill": "无填充",
+    "line": "白色 2pt"
+  },
+  "transition": {
+    "effect": "morph",
+    "p14_dur": 1500,
+    "from_page": 2
+  },
+  "constraints": [
+    "字号要大：72/36/32/28，不是正文级的小字",
+    "文字入场靠 morph：P1 放画布外、P2 落位，不要单独加动画",
+    "模糊是烘焙进图片的（PIL 预模糊即可），不要依赖 a:blur",
+    "矩形遮罩是可选装饰，不是核心；核心是模糊底 + 大字 + morph 位移"
+  ],
+  "script": "tools/eff13_gen.py",
+  "media_swap": {
+    "template": "reference/效果13.pptx",
+    "script": "tools/eff13_swap.py",
+    "method": "复制模板，替换 image1.jpg（清晰）与 grass_blur.jpg（模糊），并把各页指向 .wdp 的关系改指模糊图",
+    "blur": {
+      "radius": 50,
+      "brightness": -10
+    },
+    "pages": "固定 5 页"
+  },
+  "rebuild_warning": "不要用 python-pptx 重建：行距/内边距/morph 配对都会漂，成品会完全不同",
+  "layer_order": {
+    "1_bg": "幻灯片背景 = 清晰图（p:bg 图片填充）",
+    "2_overlay": "覆盖在背景之上的图片 = 模糊图（半径50 / 亮度-10）",
+    "3_windows": "矩形/六边形 = 幻灯片背景填充 → 露出清晰背景",
+    "note": "最容易做反：模糊是覆盖层，不是背景"
+  },
+  "pptmaster": {
+    "route": "Edit Native PPTX",
+    "workspace": "projects/eff13_edit_20261110",
+    "import": "pptx_to_svg.py <src> -o <proj> --inheritance-mode both --roundtrip",
+    "export": "svg_to_pptx.py <proj> -o <out.pptx> --roundtrip",
+    "image_rule": "images/*.jpg = 清晰背景；images/*.png = 模糊覆盖层"
+  },
+  "method_kind": "template-clone",
+  "summary": "5 页：模糊满页底图 + 大字三段位移（飞入 / 停留 / 推出），靠 morph 串起来。",
+  "materials": {
+    "min": 1,
+    "max": 1,
+    "aspects": [
+      1.82
+    ],
+    "aspect_tolerance": 0.1,
+    "orientation": "landscape",
+    "crop_allowed": true,
+    "deficit": "none",
+    "requirement": "1 张横构图照片，铺满整页后统一模糊，作为文字底；画面越干净、越亮，大字越清楚（模糊会抹掉细节，但也保留色块）。",
+    "verified": true
+  }
+}

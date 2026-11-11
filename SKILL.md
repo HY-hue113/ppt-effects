@@ -15,6 +15,32 @@ description: >
 - 用户说"使用效果1 / 效果2……"，或"用之前那个效果做一份"。
 - 用户要求复现某个已入库效果的动画、版式、切换。
 
+## 生成方式分流（要不要用 ppt-master）
+
+先看该效果 `spec.json` 的 `method_kind`：
+
+| method_kind | 含义 | 怎么做 | 是否需要 ppt-master |
+|---|---|---|---|
+| `template-clone` | 效果11–15 | 复制 `reference/*.pptx`，按 spec 换图/换色/改字 | **不需要**（参考件即成品） |
+| `from-scratch` | 效果1–10 | 库里只有参数与配方，页面要重新生成 | **需要**：`pptx_to_svg.py --roundtrip` → 改 SVG/媒体 → `svg_to_pptx.py --roundtrip` |
+
+一句话：**能"复制参考件"就不需要；要"从参数生成"就需要。**
+
+## 新增效果的标准流程（做新效果时按这个走）
+
+1. **取参考**：用户给视频/ppt/描述 → 先用 ppt-master 的 `pptx_to_svg.py --roundtrip` 导入分析，或抽视频帧读参数
+2. **建模块**：`effects/0NN_<中文名>/`，四个子目录/文件：
+   - `reference/` 基准件 pptx（用户手改版优先）
+   - `spec.json` 参数（画布/图层/坐标/动画/规则）
+   - `recipe.md` 结构 + 做法 + 坑
+   - `preview/` 至少 1 张预览
+3. **登记**：`index.md` 加一行；`spec.json` 写 `method_kind`
+4. **写经验**：把这次踩的坑写进 `recipe.md`（不写就白做）
+5. **同步公开版**：在 `ppt-effects-public/tools/sync_from_internal.py` 的 `SLUGS` 里登记英文名，跑一次脚本
+6. **提交**：内库 `git commit`，公开库也 `git commit`
+
+判据：用户说"可以/满意/入库"才算完成，没确认前只放工作区。
+
 ## 性能与读取纪律（避免"卡"）
 
 按需读，不要一次全读：

@@ -78,5 +78,6 @@
   },
   "script": "tools/prefix_texts9.py",
   "preview": "docs/preview/效果9_金边弧线.jpg",
-  "summary": "白底 + 深蓝弧线 + 圆形取景 + 超大数字；19 页，慢速切换 + 自动换片 2 秒。"
+  "summary": "白底 + 深蓝弧线 + 圆形取景 + 超大数字；19 页，慢速切换 + 自动换片 2 秒。",
+  "method_kind": "from-scratch"
 }

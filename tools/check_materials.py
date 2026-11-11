@@ -382,11 +382,13 @@ def main() -> int:
     check_images(images, mats, issues)
 
     if getattr(args, 'brief', False):
-        bad = [x for x in issues if x.get('level') in ('BLOCK', 'WARN')]
-        worst = 'BLOCK' if any(x.get('level') == 'BLOCK' for x in bad) else ('WARN' if bad else 'PASS')
-        head = bad[0]['msg'] if bad else '素材可用'
-        print('%s %s | %d 张 | %s' % (worst, spec.get('id'), len(images), head.replace(chr(10), ' ')[:60]))
-        return 0 if worst != 'BLOCK' else 1
+        blocking = [x for x in issues if x['level'] == BLOCK]
+        warning = [x for x in issues if x['level'] == WARN]
+        worst = 'BLOCK' if blocking else ('WARN' if warning else 'PASS')
+        first = (blocking or warning or [{'message': '素材可用'}])[0]['message']
+        print('%s %s | %d 张 | %s' % (worst, spec.get('id'), len(images),
+                                      first.replace(chr(10), ' ')[:60]))
+        return 1 if blocking else 0
 
     if args.json:
         import contextlib
