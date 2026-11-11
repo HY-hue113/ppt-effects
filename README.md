@@ -52,6 +52,7 @@ SKILL.md                作为 Agent Skill 使用时的入口（可让 AI 直接
 docs/USER-GUIDE.md      用户使用说明（选效果 → 校验 → 出稿）
 docs/MAINTENANCE.md     修改与更新说明（给维护者）
 docs/INSTALL.md         装到另一台机器 / 另一个 Harness
+docs/UPGRADE.md         安装与升级（新装 / 从旧版升级 / 报错对照）
 docs/preview/           10 张预览图
 effects/NNN_xxx/
     recipe.md           人读：结构、参数、坑、复用管线
@@ -109,4 +110,4 @@ tools/
 - 字体不在本库授权范围内，商用请自行确认字库许可
 - 照片版权归作者；若含可识别人物，公开传播前请自行确认肖像权
 
-更多细节：[使用说明](docs/USER-GUIDE.md)｜[维护说明](docs/MAINTENANCE.md)｜[安装](docs/INSTALL.md)
+更多细节：[使用说明](docs/USER-GUIDE.md)｜[安装与升级](docs/UPGRADE.md)｜[维护说明](docs/MAINTENANCE.md)｜[装到另一台机器](docs/INSTALL.md)
