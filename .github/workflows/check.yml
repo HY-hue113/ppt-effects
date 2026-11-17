@@ -40,13 +40,29 @@ jobs:
           python - <<'PY'
           import glob, os, sys
           bad = []
+          skipped = []
           for d in sorted(glob.glob('effects/*')):
+              # 纯素材目录（如 academic）没有 spec.json，跳过
+              if not os.path.isfile(os.path.join(d, 'spec.json')):
+                  skipped.append(d)
+                  continue
               if not os.path.isfile(os.path.join(d, 'recipe.md')):
                   bad.append(d + ' 缺 recipe.md')
-              if not os.path.isfile(os.path.join(d, 'spec.json')):
-                  bad.append(d + ' 缺 spec.json')
               if not glob.glob(os.path.join(d, 'reference', '*.pptx')):
                   bad.append(d + ' 缺 reference/*.pptx')
+          if skipped:
+              print('素材目录（无 spec，跳过）: ' + ', '.join(skipped))
           print('\n'.join(bad) or 'structure ok')
           sys.exit(1 if bad else 0)
+          PY
+
+      - name: Tool zones present
+        run: |
+          python - <<'PY'
+          import os, sys
+          need = ['image-tools', 'layout-tools', 'palette-tools',
+                  'template-tools', 'text-tools', 'free-mode']
+          missing = [z for z in need if not os.path.isdir(z)]
+          print('missing:', missing or 'none')
+          sys.exit(1 if missing else 0)
           PY
