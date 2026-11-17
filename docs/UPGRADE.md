@@ -32,10 +32,10 @@
 按 `Win + R`，输入：
 
 ```
-%USERPROFILE%\.dsh\skills
+%USERPROFILE%\<DSH_DIR>\skills
 ```
 
-回车，打开 `C:\Users\<你>\.dsh\skills`（`.dsh` 是隐藏目录，用这方式最省事）。
+回车，打开 `C:\Users\<你>\<DSH_DIR>\skills`（`.dsh` 是隐藏目录，用这方式最省事）。
 
 把 zip 解压到这里，文件夹命名为 **`ppt-effects`**。
 
@@ -88,7 +88,7 @@ pip install python-pptx Pillow lxml
 
 ```powershell
 git --version                 # 没有就去 git-scm.com 装
-cd $env:USERPROFILE\.dsh\skills
+cd $env:USERPROFILE\<DSH_DIR>\skills
 git clone https://github.com/HY-hue113/ppt-effects.git ppt-effects
 pip install python-pptx Pillow lxml
 ```
@@ -96,7 +96,7 @@ pip install python-pptx Pillow lxml
 然后重启 DSH。以后更新：
 
 ```powershell
-cd $env:USERPROFILE\.dsh\skills\ppt-effects
+cd $env:USERPROFILE\<DSH_DIR>\skills\ppt-effects
 git pull
 ```
 
@@ -109,7 +109,7 @@ git pull
 没改过就跳过。改过的通常是 `effects\<效果>\reference\*.pptx`。
 
 ```powershell
-Copy-Item "$env:USERPROFILE\.dsh\skills\ppt-effects" `
+Copy-Item "$env:USERPROFILE\<DSH_DIR>\skills\ppt-effects" `
           "$env:USERPROFILE\Desktop\ppt-effects-备份" -Recurse
 ```
 
@@ -145,7 +145,7 @@ python tools\check_materials.py --list
 ## 4. 老用户 · 升级（git 装的）
 
 ```powershell
-cd $env:USERPROFILE\.dsh\skills\ppt-effects
+cd $env:USERPROFILE\<DSH_DIR>\skills\ppt-effects
 git pull
 ```
 
@@ -201,7 +201,7 @@ git stash pop     # 有冲突就手动合并
 ```
 仓库        https://github.com/HY-hue113/ppt-effects
 下载        Releases → 最新版 → ppt-effects-vX.Y.Z.zip
-技能目录    %USERPROFILE%\.dsh\skills\ppt-effects\
+技能目录    %USERPROFILE%\<DSH_DIR>\skills\ppt-effects\
 依赖        pip install python-pptx Pillow lxml
 验证        python tools\check_materials.py --list
 ```

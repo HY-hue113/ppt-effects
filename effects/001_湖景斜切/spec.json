@@ -205,5 +205,7 @@
   },
   "preview": "docs/preview/效果1_湖景斜切滑入.jpg",
   "summary": "左侧灰底黑字标题自左滑入，右侧斜切彩色带自右滑入；2 页，平滑 1 秒。",
-  "method_kind": "from-scratch"
+  "method_kind": "from-scratch",
+  "color_source": "image",
+  "color_source_note": "主体颜色来自图片（照片/素材），改色基本无效，请换图或换配色方案。"
 }

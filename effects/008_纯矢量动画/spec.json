@@ -100,5 +100,7 @@
   },
   "preview": "docs/preview/效果8_纯矢量动画.jpg",
   "summary": "33 页纯矢量版式（封面/转盘目录/四章/大数字/评估/时间轴），只换文字。",
-  "method_kind": "from-scratch"
+  "method_kind": "from-scratch",
+  "color_source": "theme",
+  "color_source_note": "颜色由主题色驱动，改 clrScheme 可整份改色。"
 }

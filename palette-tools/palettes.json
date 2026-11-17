@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "source": "901开题答辩组会文献PPT模板（四套学术配色）",
+    "rule": "用户调用偏学术类效果前，必须先问选色；四个主推色 + 通用辅色"
+  },
+  "palettes": {
+    "academic-blue": {
+      "name": "学术蓝",
+      "primary": "183A6A",
+      "secondary": "8B9CB4",
+      "light": "D1D8E1",
+      "dark": "0D3063",
+      "accent": "FFC000",
+      "ink": "1F2A2E",
+      "paper": "FFFFFF",
+      "note": "最常用，答辩/申报书首选"
+    },
+    "academic-red": {
+      "name": "学术红",
+      "primary": "911D22",
+      "secondary": "DC9090",
+      "light": "F3C5C7",
+      "dark": "2B0A0C",
+      "accent": "FFC000",
+      "ink": "2B0A0C",
+      "paper": "FFFFFF",
+      "note": "强调结论、成果展示"
+    },
+    "academic-green": {
+      "name": "学术绿",
+      "primary": "016F35",
+      "secondary": "7FB79A",
+      "light": "CCDBD3",
+      "dark": "02401E",
+      "accent": "FFC000",
+      "ink": "12301F",
+      "paper": "FFFFFF",
+      "note": "生态/环境/田野调研"
+    },
+    "academic-purple": {
+      "name": "学术紫",
+      "primary": "80308B",
+      "secondary": "BF97C5",
+      "light": "E6D6E8",
+      "dark": "4A1A51",
+      "accent": "FFC000",
+      "ink": "2A1230",
+      "paper": "FFFFFF",
+      "note": "人文/艺术/跨学科"
+    },
+    "academic-olive": {
+      "name": "橄榄黄绿",
+      "primary": "989832",
+      "secondary": "B8B842",
+      "light": "E8E8A2",
+      "dark": "787822",
+      "accent": "FFC000",
+      "ink": "2E3312",
+      "paper": "FFFFFF",
+      "note": "农学 / 植物 / 食品类绘图"
+    },
+    "academic-lake": {
+      "name": "青蓝湖色",
+      "primary": "3A9898",
+      "secondary": "5AB8B8",
+      "light": "BAE5E5",
+      "dark": "1A7878",
+      "accent": "FFC000",
+      "ink": "0F3A3A",
+      "paper": "FFFFFF",
+      "note": "水文 / 气象 / GIS / 海洋科学"
+    },
+    "academic-lilac": {
+      "name": "灰紫丁香",
+      "primary": "725A98",
+      "secondary": "927AB8",
+      "light": "D2C0E8",
+      "dark": "523A78",
+      "accent": "FFC000",
+      "ink": "2A1E3D",
+      "paper": "FFFFFF",
+      "note": "化学 / 材料 / 纳米类绘图"
+    },
+    "academic-amber": {
+      "name": "暖橙金棕",
+      "primary": "E49832",
+      "secondary": "F4B842",
+      "light": "FDE8A2",
+      "dark": "D47822",
+      "accent": "FFC000",
+      "ink": "4A2E0A",
+      "paper": "FFFFFF",
+      "note": "社科 / 经济 / 管理类 PPT"
+    },
+    "academic-brick": {
+      "name": "砖红暖棕",
+      "primary": "C85C42",
+      "secondary": "E87C52",
+      "light": "F9C8B2",
+      "dark": "A83C32",
+      "accent": "FFC000",
+      "ink": "3D1812",
+      "paper": "FFFFFF",
+      "note": "医学 / 生物 / 临床类绘图"
+    },
+    "academic-forest": {
+      "name": "森系墨绿",
+      "primary": "447542",
+      "secondary": "649552",
+      "light": "C4D5B2",
+      "dark": "245532",
+      "accent": "FFC000",
+      "ink": "16240F",
+      "paper": "FFFFFF",
+      "note": "农林 / 生态 / 环境类 PPT 与 SCI 绘图"
+    },
+    "academic-ocean": {
+      "name": "深海蓝系",
+      "primary": "3A6798",
+      "secondary": "5A87B8",
+      "light": "BBD0E8",
+      "dark": "1A4778",
+      "accent": "FFC000",
+      "ink": "10243C",
+      "paper": "FFFFFF",
+      "note": "理工科通用 PPT / SCI 绘图"
+    }
+  },
+  "common": {
+    "gold": "FFC000",
+    "gold_deep": "C3AE53",
+    "navy": "002060",
+    "white": "FFFFFF",
+    "black": "000000",
+    "grey_text": "8A8578"
+  }
+}

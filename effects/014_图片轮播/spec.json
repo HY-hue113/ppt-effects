@@ -61,5 +61,7 @@
     "ask_count": true,
     "ask_note": "图片张数决定页数与配对方式，开工前必须先问用户给几张。"
   },
-  "preview": "docs/preview/效果14_立体图片轮播.jpg"
+  "preview": "docs/preview/效果14_立体图片轮播.jpg",
+  "color_source": "theme",
+  "color_source_note": "颜色由主题色驱动，改 clrScheme 可整份改色。"
 }

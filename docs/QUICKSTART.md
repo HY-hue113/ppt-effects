@@ -36,10 +36,10 @@
 按 `Win+R`，输入：
 
 ```
-%USERPROFILE%\.dsh\skills
+%USERPROFILE%\<DSH_DIR>\skills
 ```
 
-回车，会打开 `C:\Users\<你的用户名>\.dsh\skills`（`.dsh` 是隐藏文件夹，用这个方式最省事）。
+回车，会打开 `C:\Users\<你的用户名>\<DSH_DIR>\skills`（`.dsh` 是隐藏文件夹，用这个方式最省事）。
 
 macOS 是 `~/.dsh/skills`。
 
@@ -145,7 +145,7 @@ pip install python-pptx Pillow lxml
 ```
 仓库        https://github.com/HY-hue113/ppt-effects
 下载        Releases → v1.0.0 → ppt-effects-release.zip
-技能目录    %USERPROFILE%\.dsh\skills\ppt-effects\
+技能目录    %USERPROFILE%\<DSH_DIR>\skills\ppt-effects\
 依赖        pip install python-pptx Pillow lxml
 验证话术    效果6 是啥
 使用话术    用效果6 做一份，素材是这张图，标题「国门」

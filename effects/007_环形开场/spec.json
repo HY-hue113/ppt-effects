@@ -124,5 +124,7 @@
   },
   "preview": "docs/preview/效果7_环形开场.jpg",
   "summary": "48 片刀片扫光开场 → 圆形取景 → 四字散排；整套 25 页。",
-  "method_kind": "from-scratch"
+  "method_kind": "from-scratch",
+  "color_source": "image",
+  "color_source_note": "主体颜色来自图片（照片/素材），改色基本无效，请换图或换配色方案。"
 }

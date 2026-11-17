@@ -92,5 +92,7 @@
   },
   "preview": "docs/preview/效果10_暗红塔影.jpg",
   "summary": "深红底 + 金色线稿 + 光晕光束；11 页，平滑 1.8 秒。",
-  "method_kind": "from-scratch"
+  "method_kind": "from-scratch",
+  "color_source": "srgb",
+  "color_source_note": "颜色多为直写 srgbClr，可整份改色。"
 }

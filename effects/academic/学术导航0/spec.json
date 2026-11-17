@@ -1,0 +1,48 @@
+{
+  "id": "学术导航0",
+  "name": "纵横导航栏 · 偏学术风版",
+  "category": "偏学术类",
+  "derived_from": "动效类/效果17",
+  "pages": 20,
+  "structure": "5 章 × 4 子页",
+  "nav": {
+    "top": "4 个子页，右对齐，激活项拉长 1.45 倍",
+    "left": "5 个章节，垂直居中，激活 140 / 其余 71 / 间隙 20"
+  },
+  "editable": {
+    "cards": "原生圆角矩形（可改圆角/描边/填充）",
+    "photo_frames": "预设几何 + 图片填充（snip2SameRect / round2SameRect / ellipse）",
+    "special_layouts": [
+      "P4 时间轴",
+      "P7 图片填充卡+蒙版",
+      "P9 混排",
+      "P11 引文卡",
+      "P12 双卡+双圆",
+      "P20 数据块"
+    ]
+  },
+  "rules": [
+    "正文 ≥20pt，按可用宽度折行，不缩小字号",
+    "文字底卡用图片填充时必须加局部蒙版（不溢出），亮底配白蒙版+深字",
+    "圆/形状优先预设几何；手写 custGeom 必须过 custgeom_check（fill=norm/顺序/闭合）",
+    "尺寸与位置按文案和版面灵活调整，不写死"
+  ],
+  "reference": "reference/学术导航0-纵横导航栏-偏学术.pptx",
+  "sample": "samples/2026-11-15-学术导航0-实填示例-学术蓝.pptx",
+  "cross_link": {
+    "motion_id": "017",
+    "motion_name": "效果17 纵横导航栏"
+  },
+  "palette": {
+    "default": "academic-blue",
+    "options": [
+      "academic-blue",
+      "academic-red",
+      "academic-green",
+      "academic-purple"
+    ],
+    "variant_reference": "reference/学术导航0-纵横导航栏-偏学术.pptx",
+    "generator": "palette-tools/tools/recolor.py",
+    "note": "调用前必须询问选色；换色只改色值，不改结构"
+  }
+}

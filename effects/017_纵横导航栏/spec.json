@@ -1,0 +1,211 @@
+{
+  "id": "效果17",
+  "slug": "017_纵横导航栏",
+  "name": "纵横导航栏",
+  "created": "2026-11-13",
+  "method_kind": "template-clone",
+  "pages": 20,
+  "canvas": {
+    "px": [
+      1280,
+      720
+    ],
+    "ratio": "16:9"
+  },
+  "reference": "reference/效果17.pptx",
+  "size_kb": 140,
+  "shapes_per_page": 26,
+  "texts_per_page": 16,
+  "structure": {
+    "sections": 5,
+    "tabs_per_section": 4,
+    "page_rule": "第 i 节 · 第 j 子页 = 第 (i-1)*4+j 页",
+    "nav": {
+      "left_column": "5 个章节项（中文标题 + 英文 TITLE），竖排，行距 112px",
+      "top_bar": "CONTENTS + 当前章节名 + 4 个子页标签（1.1–1.4）",
+      "highlight": "当前章节的左侧项与当前子页标签同时变浅蓝胶囊"
+    }
+  },
+  "colors": {
+    "primary": "#4472C4",
+    "light": "#DEEBF7",
+    "pale": "#BDD7EE",
+    "white": "#FFFFFF",
+    "accent": "#FFC000"
+  },
+  "text_objects": [
+    {
+      "name": "CONTENTS",
+      "role": "固定英文标识",
+      "editable": false
+    },
+    {
+      "name": "标题1..标题5",
+      "role": "左栏章节中文名",
+      "editable": true,
+      "count": 5
+    },
+    {
+      "name": "TITLE 1..TITLE 5",
+      "role": "左栏章节英文名",
+      "editable": true,
+      "count": 5
+    },
+    {
+      "name": "标题1（顶栏）",
+      "role": "顶栏当前章节名",
+      "editable": true,
+      "count": 5
+    },
+    {
+      "name": "1.1..1.4",
+      "role": "顶栏子页标签",
+      "editable": true,
+      "count": 20
+    }
+  ],
+  "animation": {
+    "par_nodes": 0,
+    "note": "无元素动画、无切换，纯静态导航版式"
+  },
+  "editable": [
+    "文字内容",
+    "字体",
+    "字号",
+    "页面配色"
+  ],
+  "editable_note": "以上为调用时可改项，默认值等于原稿，基准件未做任何修改",
+  "locked": [
+    "形状几何",
+    "位置尺寸",
+    "层级",
+    "页数结构（5 节 × 4 子页）",
+    "导航高亮逻辑"
+  ],
+  "transition": {
+    "type": "morph",
+    "option": "byObject",
+    "duration_s": 1.5,
+    "scope": "20 页统一"
+  },
+  "content_area": "默认留空（无图板）；调用时加图片（可先用 image-tools 处理）与正文",
+  "final_no_picture": "已落盘：Desktop/Deepseek的ppt/效果17-纵横导航栏-无图板.pptx",
+  "styles": [
+    {
+      "id": "classic",
+      "name": "经典版",
+      "reference": "reference/效果17.pptx",
+      "transition": "morph 1.5s",
+      "note": "顶栏 + 左栏，激活项用浅蓝胶囊，无滑块"
+    },
+    {
+      "id": "academic",
+      "name": "偏学术风版",
+      "reference": "reference/效果17-偏学术风版.pptx",
+      "transition": "morph 1.5s（byChar）",
+      "note": "渐变填充；顶栏/左栏为镂空层，两层之间有渐变滑块随页移动；左栏激活项拉长、其余缩短并让位"
+    }
+  ],
+  "academic_style": {
+    "pages": 20,
+    "layout": "5 章 × 4 子页",
+    "layers": [
+      "bg.png 底",
+      "bar.png 顶栏（四页同图）",
+      "rail.png 左栏底板（同图）",
+      "hole_h/v 镂空块（同素材，位置随页）",
+      "slider_h/v 滑块（同素材，位置/高度随页）",
+      "文字"
+    ],
+    "rail_geometry": {
+      "active_h": 140,
+      "normal_h": 66,
+      "gap_normal": 40,
+      "gap_active": 54
+    },
+    "text": {
+      "title": "大标题",
+      "tabs": "标题1–4",
+      "rail": "标题1–5",
+      "font": "Microsoft YaHei 14/18/28"
+    }
+  },
+  "must_ask": [
+    "用哪个版本：经典版 / 偏学术风版",
+    "章节数与每章子页数（由文案决定，不写死 5×4）",
+    "各章节名、各子页名、大标题",
+    "字体与字号（默认 Microsoft YaHei）"
+  ],
+  "nav_from_copy": {
+    "左栏项数": "章节数",
+    "顶栏项数": "每章子页数",
+    "页数": "章节数 × 子页数",
+    "游走方向": "顶栏自左向右、左栏自上而下"
+  },
+  "density_rule": {
+    "间隙": "顶部与左侧，所有镂空之间间隙必须一致",
+    "分布": "尽量均匀；项少时拉大项高而非拉大间隙",
+    "左侧整体": "垂直居中",
+    "顶部整体": "右对齐（末项贴画布右边距 32px）",
+    "顶部项多时": "与左侧同理：激活项拉长 1.45 倍、其余缩短，间隙保持一致",
+    "用户定制": "用户若另有分布要求，按其要求调整"
+  },
+  "generator": "tools/build_academic.py",
+  "generator_usage": "python build_academic.py --chapters \"标题1;标题2\" --subs \"标题1;标题2;标题3\" --title 大标题 --out x.pptx",
+  "tab_geometry": {
+    "base_w": "96–150 自适应",
+    "active_scale": 1.45,
+    "gap": "10–12",
+    "align": "right"
+  },
+  "rail_geometry": {
+    "active_h": 140,
+    "normal_h": "56–120 自适应",
+    "gap": "12–64 等间隙",
+    "align": "center"
+  },
+  "content_rules": {
+    "正文字号": "按内容自适应：3条以内且短→26pt；4条→23pt；5条→20pt；更多→18pt",
+    "正文对齐": "水平居中 + 垂直居中（按内容块高度计算起始 y）",
+    "图片边框": "同一份 PPT 里，同一种边框单独使用最多 2 次（用户明确要求除外）",
+    "边框组合": "可用同/不同形状缩放+offset 组成组合边框，再用组合边界的并集截图"
+  },
+  "frame_library": {
+    "基本": [
+      "cut 切角",
+      "arch 拱形",
+      "hex 六边",
+      "circle 圆",
+      "diag 斜切",
+      "rhombus 菱形",
+      "capsule 胶囊"
+    ],
+    "组合": [
+      "arch_bar 拱形+底条",
+      "cut_notch 切角+右下缺口",
+      "circle_2 双圆",
+      "hex_bar 六边+左侧竖条",
+      "cut_dbl 切角+内框线"
+    ],
+    "实现": "combo_mask(spec) 取并集 → 图像按并集遮罩裁切 → 描边用「遮罩−腐蚀」边界烘焙进 PNG"
+  },
+  "materials": {
+    "min": 0,
+    "max": 2,
+    "recommended": 1,
+    "aspects": [
+      1.78,
+      1.33
+    ],
+    "aspect_tolerance": 0.12,
+    "orientation": "landscape",
+    "crop_allowed": true,
+    "deficit": "none",
+    "requirement": "图片可选：导航骨架不依赖照片，内容区按需放 1–2 张（先经 image-tools 做形状遮罩再放）。",
+    "verified": true
+  },
+  "preview": "effects/017_纵横导航栏/preview/基准帧_p01.png",
+  "color_source": "srgb",
+  "color_source_note": "颜色多为直写 srgbClr，可整份改色。",
+  "summary": "20 页导航骨架：顶部横条与左侧竖条两种，含章节高亮与分页示例；只换文字、配色与校徽。"
+}

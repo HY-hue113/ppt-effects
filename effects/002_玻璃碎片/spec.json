@@ -320,5 +320,7 @@
   },
   "preview": "docs/preview/效果2_玻璃碎片散开.jpg",
   "summary": "四块「玻璃」从中心叠起、散开、排成一行；短版 3 页 / 长版 19 页，平滑 2 秒。",
-  "method_kind": "from-scratch"
+  "method_kind": "from-scratch",
+  "color_source": "image",
+  "color_source_note": "主体颜色来自图片（照片/素材），改色基本无效，请换图或换配色方案。"
 }

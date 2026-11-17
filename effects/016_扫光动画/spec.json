@@ -1,0 +1,118 @@
+{
+  "id": "效果16",
+  "slug": "016_扫光动画",
+  "name": "扫光动画",
+  "created": "2026-11-13",
+  "method_kind": "template-clone",
+  "pages": 1,
+  "canvas": {
+    "cm": [
+      33.87,
+      19.05
+    ]
+  },
+  "reference": "reference/效果16.pptx",
+  "size_kb": 51,
+  "shapes": 31,
+  "texts": 11,
+  "animation": {
+    "par_nodes": 99,
+    "types": [
+      "fade",
+      "wipe",
+      "motion/scale"
+    ],
+    "targets": 31,
+    "note": "动画极多，重做成本高"
+  },
+  "text_objects": [
+    {
+      "id": 13,
+      "name": "文本框 12",
+      "text": "我是大肥鱼"
+    },
+    {
+      "id": 9,
+      "name": "文本框 8",
+      "text": "Harness"
+    },
+    {
+      "id": 7,
+      "name": "文本框 6",
+      "text": "DeepSeek"
+    },
+    {
+      "id": 4,
+      "name": "文本框 3",
+      "text": "DeepSeek"
+    },
+    {
+      "id": 11,
+      "name": "文本框 10",
+      "text": "我能做什么？"
+    },
+    {
+      "id": 15,
+      "name": "文本框 14",
+      "text": "推理"
+    },
+    {
+      "id": 18,
+      "name": "文本框 17",
+      "text": "PPT"
+    },
+    {
+      "id": 22,
+      "name": "文本框 21",
+      "text": "编程"
+    },
+    {
+      "id": 48,
+      "name": "文本框 47",
+      "text": "在这里你不仅可以写代码，跑测试"
+    },
+    {
+      "id": 49,
+      "name": "文本框 48",
+      "text": "你，准备好token了吗？"
+    },
+    {
+      "id": 50,
+      "name": "文本框 49",
+      "text": "还可以尝试，把天马行空的想象变为现实"
+    }
+  ],
+  "rule": "可改文字的：内容 / 字号 / 颜色；不可动形状、位置、动画、层级",
+  "summary": "单页开场：梯形/组合滑动 + 多段文字按序出现，共 99 个动画节点",
+  "status": "archived",
+  "editable": [
+    "文字内容",
+    "字号",
+    "颜色"
+  ],
+  "locked": [
+    "形状",
+    "位置",
+    "尺寸",
+    "层级",
+    "动画时序"
+  ],
+  "verified_copy": {
+    "example": "食堂版（桌面 效果16-食堂.pptx，未入库）",
+    "note": "17 处文字替换后动画完好；英文词换文案要注意宽度（Harness→CANTEEN 会换行）"
+  },
+  "english_swap_rule": "英文换词优先：首字母大写 + 字号缩 4–8pt；仍换行才换短词",
+  "materials": {
+    "min": 0,
+    "max": 0,
+    "aspects": [],
+    "orientation": "any",
+    "crop_allowed": false,
+    "deficit": "none",
+    "requirement": "不依赖照片：纯形状 + 99 个动画节点的扫光开场，只换文字。",
+    "verified": true
+  },
+  "preview": "effects/016_扫光动画/preview/基准帧.png",
+  "color_source": "theme",
+  "color_source_note": "颜色由主题色驱动，改 clrScheme 可整份改色。"
+}

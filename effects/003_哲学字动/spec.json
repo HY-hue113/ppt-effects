@@ -189,5 +189,7 @@
   },
   "preview": "docs/preview/效果3_哲学字动.jpg",
   "summary": "巨型字母位移 + 照片整页穿插，页数 = 图数×2+2；自动换片。",
-  "method_kind": "from-scratch"
+  "method_kind": "from-scratch",
+  "color_source": "theme",
+  "color_source_note": "颜色由主题色驱动，改 clrScheme 可整份改色。"
 }

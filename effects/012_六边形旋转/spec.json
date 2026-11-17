@@ -89,5 +89,7 @@
     "ask_count": true,
     "ask_note": "图片张数决定页数与配对方式，开工前必须先问用户给几张。"
   },
-  "preview": "docs/preview/效果12_六边形旋转.jpg"
+  "preview": "docs/preview/效果12_六边形旋转.jpg",
+  "color_source": "image",
+  "color_source_note": "主体颜色来自图片（照片/素材），改色基本无效，请换图或换配色方案。"
 }

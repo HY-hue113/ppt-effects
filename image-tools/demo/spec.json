@@ -1,0 +1,59 @@
+{
+  "id": "image-tools",
+  "slug": "018_图片取景形状",
+  "name": "图片取景形状（工具示范）",
+  "created": "2026-11-13",
+  "method_kind": "shape-mask",
+  "pages": 6,
+  "canvas": {
+    "px": [
+      1280,
+      720
+    ],
+    "ratio": "16:9"
+  },
+  "reference": "reference/效果18_图片取景形状.pptx",
+  "shapes": [
+    "cut",
+    "circle",
+    "hex",
+    "arch",
+    "diag"
+  ],
+  "combos": [
+    "同形同尺寸并列",
+    "同形不同尺寸",
+    "异形叠压",
+    "多图阵列",
+    "异形对置",
+    "同形阶梯"
+  ],
+  "params": {
+    "cut_ratio": 0.18,
+    "hex_slope": 0.22,
+    "arch_radius": 0.45,
+    "diag_skew": 0.2,
+    "stroke_px": [
+      2,
+      3
+    ],
+    "gap_min_ratio": 0.12
+  },
+  "tools": "tools/build_demo.py（mask / crop / outline 三个函数）",
+  "editable": [
+    "形状种类",
+    "尺寸与比例",
+    "图片内容",
+    "描边颜色与粗细",
+    "组合方式"
+  ],
+  "locked": [
+    "遮罩算法（形状必须与描边同源，否则错位）"
+  ],
+  "rules": [
+    "一页最多两种形状",
+    "同页多图同形同尺寸",
+    "叠压时后图加白描边"
+  ],
+  "role": "工具示范，不是效果"
+}

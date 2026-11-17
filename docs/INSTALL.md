@@ -18,7 +18,7 @@
 DeepSeek Harness 从用户目录下的 `skills/` 发现技能：
 
 ```
-C:\Users\<你的用户名>\.dsh\skills\ppt-effects\
+C:\Users\<你的用户名>\<DSH_DIR>\skills\ppt-effects\
     SKILL.md        ← 必须有，frontmatter 里的 name 就是调用名
     index.md
     docs/
@@ -26,7 +26,7 @@ C:\Users\<你的用户名>\.dsh\skills\ppt-effects\
     tools/
 ```
 
-把整个目录拷到 `\.dsh\skills\ppt-effects\` 即可（目录名建议就叫 `ppt-effects`，与 SKILL.md 的 `name` 一致）。
+把整个目录拷到 `\<DSH_DIR>\skills\ppt-effects\` 即可（目录名建议就叫 `ppt-effects`，与 SKILL.md 的 `name` 一致）。
 
 macOS / Linux 对应 `~/.dsh/skills/ppt-effects/`。
 
@@ -88,7 +88,7 @@ Agent 会读 `SKILL.md` → `index.md` → 该效果的 `recipe.md`/`spec.json`�
 | 提示缺 python-pptx | 装依赖；注意有的机器 `python` 指向 Windows 商店的假入口，用 `py -3` 或真实解释器路径 |
 | 参考件打不开 | 需要 PowerPoint 2019+（morph 切换 `p159`）或 LibreOffice；旧版 PowerPoint 会降级成淡入淡出 |
 | 中文字体发虚/回退 | 见 §3 |
-| 找不到 skill | 确认目录是 `\.dsh\skills\ppt-effects\SKILL.md`，且 frontmatter 有 `name: ppt-effects` |
+| 找不到 skill | 确认目录是 `\<DSH_DIR>\skills\ppt-effects\SKILL.md`，且 frontmatter 有 `name: ppt-effects` |
 
 ## 8. 建议的第一次实验
 
