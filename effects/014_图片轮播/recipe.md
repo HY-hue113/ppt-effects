@@ -2,7 +2,15 @@
 
 **基准件**：`reference/效果14.pptx`（11 页 / 10 标签，用户手改版，22 MB）
 **方式**：`template-clone` —— 复制基准件后按规则换图、减标签、隐藏多余文字
-**生成器**：`tools/eff14_gen.py`（改 `IMGS` 与 `OUT` 即可，N 自动推导）
+**生成器（2026-11-26 参数化）**：`tools/build_effect14_dynamic.py`
+
+```
+python tools/build_effect14_dynamic.py --images a.jpg,b.jpg,c.jpg --out 效果14-3图.pptx
+```
+
+- N=3–10 → N+1 页；图片按目标框写 `a:srcRect` 做 cover 裁切，不改几何；
+- 越界图位移到 y=−50cm；标签隐藏 >N 并按 `SLOT=33.87/N` 重排；高亮块对准当前页；`TextBox 13/15` 隐藏；
+- 验收（N=3/4/10 已跑）：页数=N+1、每页可见标签=N、每页图片数 `[2,3,4,…,4,3,2]`、`p:timing` 与模板一致。
 
 ## 结构
 
@@ -64,3 +72,12 @@
 2. 问：每页用哪张图（可重复）
 3. 跑 `tools/eff14_gen.py`（N = 图片数）
 4. 需要更少标签时手动隐藏多余编号 + 对应图页
+## 出画提醒（2026-11-27）
+
+参考件里有**整块停在画布外**的形状（等命 / 入场用）。这是设计的一部分：
+
+- 按 `--roundtrip` 跑质量门（本库的正常用法）→ **出画放行，不报错**；
+- 只有默认/创作模式的版面契约会判 `exceeds the root viewBox`。真要在那条路径下保留出画，
+  用 `tools/stage_offscreen.py` 加 staging 豁免。
+
+详见 `effects/005_三段上滚/recipe.md` 的「出画与质量门」一节。

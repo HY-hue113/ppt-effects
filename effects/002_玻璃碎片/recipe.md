@@ -90,5 +90,12 @@ python <本技能>/tools/patch_effect2.py --in <导出>.pptx --out <定稿>.pptx
 脚本：`tools/build_effect2_ride.py`（含上述三条的完整实现）。
 
 > 判定"哪个是背景"的可靠办法：先找尺寸≈整页（12192000×6858000，容差 20 万 EMU）且带 `a:blip` 的形状；找不到再退到 `p:bg//a:blip`。
+## 出画提醒（2026-11-27）
 
+参考件里有**整块停在画布外**的形状（等命 / 入场用）。这是设计的一部分：
 
+- 按 `--roundtrip` 跑质量门（本库的正常用法）→ **出画放行，不报错**；
+- 只有默认/创作模式的版面契约会判 `exceeds the root viewBox`。真要在那条路径下保留出画，
+  用 `tools/stage_offscreen.py` 加 staging 豁免。
+
+详见 `effects/005_三段上滚/recipe.md` 的「出画与质量门」一节。

@@ -41,7 +41,9 @@ theme = apply_theme("academic-blue")   # 语义色：primary/secondary/light/dar
 
 ---
 
-## 一·五、layout-tools：版式骨架
+## 一·五、layout-tools：版式骨架（独立保留）
+
+> 本区不属于动效/学术两种模式的流程，独立保留，库内流程不引用。
 
 **22 页原生版式**（`layout-tools/reference/版式库-参考件-22页.pptx`），246 个形状 + 2 张可换色图片。
 
@@ -122,29 +124,16 @@ theme = apply_theme("academic-blue")   # 语义色：primary/secondary/light/dar
 
 **坐标表**：`template-tools/logo_boxes.json`（每个模板的校徽/校名位置）。
 
-## 四·六、free-mode：自由创作
-
-三模式之一（与动效/学术并列）。**改**现有效果、**拼**多个效果、**搭**新页。
-
-| 规则 | 内容 |
-|---|---|
-| 不存草稿 | 草稿只在 `default-workspace\free\<日期-主题>\`；「放弃/认可」时必须问保存与路径 |
-| 完全隔离 | 不写回 `effects/`、`templates/`、`*-tools/`，不改索引，不改原件 |
-| 插件先确认 | 可调 ppt-master 及用户插件，调用前确认名称/版本/兼容性 |
-
-详见 `free-mode/README.md`。
-
 ## 五、库结构总览
 
 ```
 ppt-effects/
-├─ effects/                动效类 001–017
+├─ effects/                动效类 001–022
 │   └─ academic/           偏学术类（学术导航0…）
 ├─ palette-tools/          选色（4 套主推 + 7 套学科 = 11 套）
 ├─ image-tools/            图片取景（预设几何 / custGeom / 校验）
 ├─ text-tools/             文本三分类：title / nav / textbox（190 种样式）
-├─ layout-tools/           版式区（22 页原生版式骨架）
-├─ free-mode/              自由创作模式（仅文档，不存草稿）★新增
+├─ layout-tools/           版式区（独立保留）
 ├─ template-tools/         模板复刻（占位化 + 校徽/校名替换）
 ├─ tools/  docs/
 └─ TOOLS.md SKILL.md index.md
@@ -170,3 +159,20 @@ ppt-effects/
 | 中等 | 白 | 50% + 文字加阴影 | 深色 |
 
 规则：蒙版尺寸=卡片尺寸（略小 2–3px），只覆盖卡内，不外溢。
+## 出画形状与质量门（2026-11-27 实测修正）
+
+不少效果靠「形状整块停在画布外等命」（上滚、待命、入场）实现。质量门两种跑法规则不同：
+
+| 跑法 | 出画文字 |
+|---|---|
+| `--roundtrip`（本库正常用法：参考件 → SVG → 改 → 回 PPTX） | **放行**，只查改字后的文字容量 |
+| 默认 / 创作模式（从零画页面） | **ERROR**：版面契约禁止越出 viewBox |
+
+所以按本库流程制作时，出画不需要任何标记。只有「从零创作」路径才可能要豁免：
+
+```xml
+<g id="stage-bottom" data-pptx-morph-staging="true" data-pptx-bounds="x y w h">
+```
+
+bounds 必须与画布完全不相交、且包住组内内容（容差 5%）；部分出画无法豁免。
+工具：`python tools/stage_offscreen.py <svg目录|文件> [--check]`。

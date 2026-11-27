@@ -24,6 +24,10 @@ import sys
 import zipfile
 
 from lxml import etree
+
+import sys
+sys.path.insert(0, r'<LIB_ROOT>\tools')
+import typeset  # noqa: E402
 from PIL import Image
 
 P = 'http://schemas.openxmlformats.org/presentationml/2006/main'
@@ -83,7 +87,7 @@ def is_nav_shape(sp):
     return False
 
 def fit_font(sp, text):
-    "按可用宽度缩小字号，避免长标题换行叠字"
+    """断行 + 字号二分（下限 20pt）：能放下的最大字号，断行写进 <a:br/>"""
     if not text:
         return
     xf = sp.find('.//{%s}xfrm' % A)
@@ -92,15 +96,23 @@ def fit_font(sp, text):
     ext = xf.find('{%s}ext' % A)
     if ext is None:
         return
-    avail = int(ext.get('cx')) // 9525 - 40
+    w = int(ext.get('cx')) // 9525
+    h = int(ext.get('cy')) // 9525
+    # 原字号作为上限
+    top = 32
     for r in sp.iter('{%s}r' % A):
         rPr = r.find('{%s}rPr' % A)
-        if rPr is None:
-            continue
-        cur = int(rPr.get('sz') or 1800)
-        fit = int(avail / max(1, len(text)) * 100)
-        if fit < cur:
-            rPr.set('sz', str(max(1200, fit)))
+        if rPr is not None and rPr.get('sz'):
+            top = max(top, int(rPr.get('sz')) // 100)
+    r = typeset.fit_block(text, max(w - 32, 40), max(h - 24, 20),
+                          max_pt=min(top, 60), min_pt=20, max_lines=3)
+    # 写回：字号统一
+    for run in sp.iter('{%s}r' % A):
+        rPr = run.find('{%s}rPr' % A)
+        if rPr is not None:
+            rPr.set('sz', str(int(r['pt'] * 100)))
+    # 只改字号：保留原有字体/颜色/加粗（不重建 run，避免丢样式）
+
 
 def rels_name(part):
     return '%s/_rels/%s.rels' % (os.path.dirname(part), os.path.basename(part))

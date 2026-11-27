@@ -62,3 +62,12 @@ checks.accept_alpha: true 让 checker 认透明通道：实测一张 79% 透明�
 3. **形状筛选别只看尺寸**：先按 `prst == 'roundRect'` 过滤，否则会把同尺寸的 `Ellipse` 光晕也改成矩形（我踩过，第 2 页光晕被改成方块）。
 4. **改长条形状只换 `prst`**：位置/尺寸/填充/文字都不动，`prstGeom` 的 `avLst` 要清空后重设 `adj`。
 5. **黑底要用 `addprevious` 插入**，保证在长条之下、文字之上，不能用 `append`。
+## 出画提醒（2026-11-27）
+
+参考件里有**整块停在画布外**的形状（等命 / 入场用）。这是设计的一部分：
+
+- 按 `--roundtrip` 跑质量门（本库的正常用法）→ **出画放行，不报错**；
+- 只有默认/创作模式的版面契约会判 `exceeds the root viewBox`。真要在那条路径下保留出画，
+  用 `tools/stage_offscreen.py` 加 staging 豁免。
+
+详见 `effects/005_三段上滚/recipe.md` 的「出画与质量门」一节。

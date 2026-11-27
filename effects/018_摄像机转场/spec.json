@@ -1,0 +1,112 @@
+{
+  "name": "摄像机动态转场（NO.190）",
+  "method_kind": "template-clone",
+  "canvas": {
+    "w": 1280,
+    "h": 720
+  },
+  "pages": 7,
+  "materials": {
+    "images": 1,
+    "subtitle": {
+      "max_chars": 20,
+      "example": "用行动证明自己·为班级贡献力量"
+    },
+    "ask_count": false,
+    "note": "原版三层（底图/中部横幅/底部装饰）；单张照片版只保留底图，三层结构见 layers",
+    "min": 1,
+    "max": 1,
+    "aspects": [
+      1.7778
+    ],
+    "aspect_tolerance": 0.08,
+    "orientation": "landscape",
+    "crop_allowed": true,
+    "deficit": "none",
+    "requirement": "1 张 16:9 横构图照片；副标题不超过 20 字（超过会缩字号）。",
+    "verified": true
+  },
+  "layers": [
+    {
+      "role": "底图",
+      "x": 0,
+      "y": 0,
+      "w": 1279,
+      "h": 720,
+      "note": "全屏底图，横构图"
+    },
+    {
+      "role": "中部横幅",
+      "x": 231,
+      "y": 92,
+      "w": 852,
+      "h": 293,
+      "note": "主标题/横幅图，透明 PNG 最佳"
+    },
+    {
+      "role": "底部装饰",
+      "x": 0,
+      "y": 527,
+      "w": 1280,
+      "h": 192,
+      "note": "红绸/地面等装饰条"
+    }
+  ],
+  "transition": {
+    "type": "morph",
+    "option": "byObject",
+    "speed": "med",
+    "advance_ms": 750,
+    "last_page": {
+      "speed": "slow",
+      "duration_ms": 1250
+    }
+  },
+  "camera": {
+    "mechanism": "遮罩组合旋转角在页间变化，Morph 插值 → 镜头甩动",
+    "mask_rotation_deg": {
+      "p4": 60,
+      "p5": 240,
+      "p6": 300,
+      "p7": 90,
+      "p8": 90
+    },
+    "note": "图片自身几何（位置/尺寸/crop/rot）全程不变"
+  },
+  "extra_animations": {
+    "p2": [
+      {
+        "type": "motion_path",
+        "count": 3,
+        "path": "M 0 0 L 0 0.25 E",
+        "dur_ms": 500
+      },
+      {
+        "type": "emphasis_rotate",
+        "count": 2
+      }
+    ]
+  },
+  "requirements": {
+    "powerpoint": "2019 或 Microsoft 365（Morph 必需）",
+    "font": "无特殊字体依赖",
+    "fonts": "原版内嵌等线 / 等线 Light / 思源黑体 CN Bold；参考件已剥离，需本机安装才完全还原"
+  },
+  "pitfalls": [
+    "低于 PowerPoint 2019 无 Morph，退化成普通切换，镜头感消失",
+    "三层图必须都换成同一色调，否则旋转时接缝明显",
+    "中部横幅建议透明 PNG，否则会盖住底图",
+    "自动换片 0.75 秒，太快会看不清，太慢像卡住",
+    "参考件用中性占位图，视觉不等于原版海报；换回自己的图才有效果",
+    "单张照片当三层用会有接缝：要么只用底图，要么给三层准备不同画面"
+  ],
+  "reference": {
+    "note": "以用户 2026-11-22 调整版为准（7 页，1 张底图）；已去内嵌字体 35.7MB→1.2MB",
+    "size_kb": 1240
+  },
+  "id": "效果18",
+  "summary": "7 页摄像机甩动转场：三层图层固定，靠遮罩旋转 + 平滑切换做出镜头感；只需 1 张横图 + 一行副标题。",
+  "color_source": "image",
+  "color_source_note": "主体是照片与遮罩运动，改色几乎无效（实测像素差 2.1）",
+  "preview": "effects/018_摄像机转场/preview/p01.png"
+}

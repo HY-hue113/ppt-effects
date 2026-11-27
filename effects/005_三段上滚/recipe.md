@@ -48,3 +48,50 @@
 ## 复用到新素材
 
 换 `IMG` 指向的图片；文案改动时同步调三页文本框的 y。标题与「01」的位置不需要动。
+## 出画与质量门（2026-11-27 实测修正）
+
+本效果靠「文本框整块停在画布外等命 + 平滑切换」实现上滚，**出画是设计的一部分**。
+
+### 结论：走 roundtrip 时，出画不违规
+
+质量门有两种跑法，规则完全不同：
+
+| 跑法 | 出画文字 | 实际检查什么 |
+|---|---|---|
+| `svg_quality_checker.py <工程> --roundtrip` | **放行**（3 页 100% 通过，exit 0） | 只查「改字后单行放不放得下」的文字容量 |
+| `svg_quality_checker.py <工程>/authoring-svg-flat`（默认/创作模式） | **ERROR**，exit 1 | 版面契约：文字、图片不许越出 viewBox |
+
+效果库的用法是「拿参考件 → 拆 SVG → 换图改字 → 合回 PPTX」，属于 **roundtrip**，
+所以：**只要按 `--roundtrip` 跑质量门，出画文字不报错。**
+
+### 默认模式报错长什么样（知悉即可，不用改）
+
+```
+[ERROR] <text> (x=440.42, y=876.53; text='首先，巴门尼德认为…')
+        exceeds the root viewBox on the vertical axis: overflow 30.4%
+```
+
+这是「从零创作」路径的版面契约。若确实要在该路径下保留出画，才需要下面的豁免。
+
+### 备选：从零创作时用 staging 豁免
+
+```xml
+<g id="stage-bottom" data-pptx-morph-staging="true" data-pptx-bounds="-169 728 1958 1229">
+  <g id="shape-14" data-pptx-frame="446.98 772.87 757.22 571.93"> … </g>
+</g>
+```
+
+三条硬约束（不满足照样 ERROR）：
+
+1. 该组必须**完全**在画布外；露一角就报 `requires wholly off-canvas`；
+2. 组内内容估算范围要落在 `data-pptx-bounds` 内（容差 5%）；
+3. 必须有稳定 `id`，不能与 `data-pptx-layer` / `data-pptx-placeholder` 混用。
+
+工具：`python tools/stage_offscreen.py <svg目录> [--check]`（四方向自动归组、bounds 只向外扩、幂等）。
+
+### 部分出画（压在画布边缘）无法豁免
+
+`data-pptx-morph-staging` 只收「完全出画」。像效果 3 那种巨型字母压在边上滑过的情况：
+
+- 默认模式会报 ERROR，且**没有**可用的豁免（实测 `data-pptx-role="decoration"`、`clip-path` 都不豁免）；
+- 但它在 roundtrip 模式下**同样放行**，所以按本库的正常用法制作即可。

@@ -2,7 +2,17 @@
 
 > 基准件：`reference/效果11.pptx`（4 页模板，ppt-master 模板套用版）
 > 多图成品：`reference/效果11-多图版.pptx`（9 张图 → 10 页）
-> 生成脚本：`tools/eff11_multi.py`
+> 生成脚本：`tools/eff11_multi.py`（原始实现）
+
+**参数化入口（2026-11-26）**：`tools/build_effect11_dynamic.py`（包装原始脚本，只替换 IMGS/SRC/OUT）
+
+```
+python tools/build_effect11_dynamic.py --images a.jpg,b.jpg,c.jpg --out 效果11-3图.pptx
+```
+
+- a=2–9 → a+1 页；p2/p3 骨架交替复制、逐页改名填图/上色、末页按奇偶镜像；
+- 验证：a=3 → 4 页、a=4 → 5 页（末页单图）、a=9 → 10 页且逐页图片引用与多图版一致；渲染 2/4 页正常；
+- 包装层会 prune 掉未被 `sldIdLst` 引用的旧 slide 部件（2026-11-26），部件数=页数，导入/放映都干净。
 
 ## 一、层级关系（自上而下，第 n 页，n≥2）
 
